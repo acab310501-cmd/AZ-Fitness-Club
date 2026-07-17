@@ -1,0 +1,21 @@
+{
+  "name": "az-fitness-club",
+  "version": "1.0.0",
+  "description": "React-проект фитнес-клуба.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/acab310501-cmd/AZ-Fitness-Club.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/acab310501-cmd/AZ-Fitness-Club/issues"
+  },
+  "homepage": "https://github.com/acab310501-cmd/AZ-Fitness-Club#readme"
+}
