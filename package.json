@@ -4,11 +4,10 @@
   "description": "React-проект фитнес-клуба.",
   "main": "index.js",
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "preview": "vite preview"
-},
-
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/acab310501-cmd/AZ-Fitness-Club.git"
@@ -20,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/acab310501-cmd/AZ-Fitness-Club/issues"
   },
-  "homepage": "https://github.com/acab310501-cmd/AZ-Fitness-Club#readme"
+  "homepage": "https://github.com/acab310501-cmd/AZ-Fitness-Club#readme",
+  "dependencies": {
+    "@vitejs/plugin-react": "^6.0.3",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "vite": "^8.1.5"
+  }
 }
