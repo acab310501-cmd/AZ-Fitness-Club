@@ -1,0 +1,497 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AZ Fitness Club — премиальный фитнес-клуб</title>
+
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Vite -->
+  <script type="module" src="/src/main.js"></script>
+</head>
+
+<body>
+
+  <!-- ===================================== -->
+  <!-- PRELOADER -->
+  <!-- ===================================== -->
+
+  <div id="preloader">
+    <div class="preloader-logo">AZ</div>
+    <div class="preloader-spinner"></div>
+  </div>
+
+  <!-- Cursor -->
+  <div class="cursor-glow"></div>
+
+  <!-- ===================================== -->
+  <!-- HEADER -->
+  <!-- ===================================== -->
+
+  <header class="header">
+    <div class="logo">
+      <h2>AZ</h2>
+      <span>FITNESS CLUB</span>
+    </div>
+
+    <nav class="nav">
+      <a href="#about">О клубе</a>
+      <a href="#trainers">Тренеры</a>
+      <a href="#membership">Абонементы</a>
+      <a href="#contacts">Контакты</a>
+    </nav>
+
+    <a href="#membership" class="join-btn">Вступить</a>
+  </header>
+
+  <!-- ===================================== -->
+  <!-- MAIN -->
+  <!-- ===================================== -->
+
+  <main>
+
+    <!-- ===================================== -->
+    <!-- HERO -->
+    <!-- ===================================== -->
+
+    <section class="hero">
+      <video
+        class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="metadata"
+        poster="/images/hero-poster.jpg"
+      >
+        <source src="/videos/gym.mp4" type="video/mp4" />
+      </video>
+
+      <div class="hero-overlay"></div>
+      <div class="particles"></div>
+
+      <div class="hero-content">
+        <div class="hero-sub">PRIVATE FITNESS CLUB</div>
+
+        <h1>
+          <span class="line">Стань</span>
+          <span class="line">лучшей</span>
+          <span class="line">версией</span>
+          <span class="line">себя</span>
+        </h1>
+
+        <p>Пространство силы, эстетики и личной трансформации.</p>
+
+        <a href="#membership" class="hero-button">Вступить в клуб</a>
+
+        <div class="scroll-indicator">
+          <span></span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- ABOUT -->
+    <!-- ===================================== -->
+
+    <section class="about reveal" id="about">
+      <div class="container">
+        <div class="section-title">
+          <span>WHY AZ FITNESS CLUB</span>
+          <h2>
+            Мы создаём пространство,<br>
+            где каждая деталь работает<br>
+            на ваш результат.
+          </h2>
+          <p>
+            Не просто фитнес-клуб. Пространство силы, эстетики,
+            дисциплины и личной трансформации.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <article class="about-card reveal">
+            <div class="card-icon">✦</div>
+            <h3>Luxury</h3>
+            <p>Дизайнерский интерьер, премиальное оборудование и атмосфера лучших клубов мира.</p>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-icon">◈</div>
+            <h3>Privacy</h3>
+            <p>Минимум людей, максимум комфорта. Никаких очередей.</p>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-icon">✧</div>
+            <h3>Recovery</h3>
+            <p>Сауна, массаж, полноценная зона восстановления.</p>
+          </article>
+
+          <article class="about-card reveal">
+            <div class="card-icon">⬢</div>
+            <h3>Community</h3>
+            <p>Сообщество людей, которые ежедневно становятся лучшей версией себя.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- STATISTICS -->
+    <!-- ===================================== -->
+
+    <section class="stats reveal">
+      <div class="container">
+        <div class="stats-grid">
+          <article class="stat-card">
+            <span class="stat-number" data-target="1500" data-suffix="+">0</span>
+            <p>Довольных клиентов</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="8" data-suffix="">0</span>
+            <p>Лет опыта</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="42" data-suffix="">0</span>
+            <p>Профессиональных тренеров</p>
+          </article>
+
+          <article class="stat-card">
+            <span class="stat-number" data-target="98" data-suffix="%">0</span>
+            <p>Продлевают абонемент</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- TRAINERS -->
+    <!-- ===================================== -->
+
+    <section class="trainers reveal" id="trainers">
+      <div class="trainers-glow trainers-glow-left"></div>
+      <div class="trainers-glow trainers-glow-right"></div>
+
+      <div class="container">
+        <div class="section-title">
+          <span>ELITE COACHES</span>
+          <h2>
+            Люди, которые помогут<br>
+            изменить вашу жизнь.
+          </h2>
+          <p>
+            Наши тренеры — профессионалы, сопровождающие вас на каждом этапе пути.
+          </p>
+        </div>
+
+        <div class="trainers-grid">
+          <article class="trainer-card reveal">
+            <span class="trainer-glow"></span>
+            <img src="/images/trainers/trainer-1.webp" alt="Иван Петров" />
+            <div class="trainer-info">
+              <h3>Иван Петров</h3>
+              <span>Strength Coach</span>
+              <p class="trainer-exp">Опыт: <strong>10+ лет</strong></p>
+              <ul class="trainer-list">
+                <li>Силовой тренинг</li>
+                <li>Набор мышечной массы</li>
+                <li>Индивидуальное сопровождение</li>
+              </ul>
+              <a href="#contacts" class="trainer-btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="trainer-card reveal">
+            <span class="trainer-glow"></span>
+            <img src="/images/trainers/trainer-2.webp" alt="Анна Волкова" />
+            <div class="trainer-info">
+              <h3>Анна Волкова</h3>
+              <span>Pilates Expert</span>
+              <p class="trainer-exp">Опыт: <strong>8 лет</strong></p>
+              <ul class="trainer-list">
+                <li>Pilates</li>
+                <li>Mobility</li>
+                <li>Stretching</li>
+              </ul>
+              <a href="#contacts" class="trainer-btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="trainer-card reveal">
+            <span class="trainer-glow"></span>
+            <img src="/images/trainers/trainer-3.webp" alt="Алексей Смирнов" />
+            <div class="trainer-info">
+              <h3>Алексей Смирнов</h3>
+              <span>Performance Coach</span>
+              <p class="trainer-exp">Опыт: <strong>12 лет</strong></p>
+              <ul class="trainer-list">
+                <li>Функциональный тренинг</li>
+                <li>Выносливость</li>
+                <li>Подготовка спортсменов</li>
+              </ul>
+              <a href="#contacts" class="trainer-btn">Подробнее</a>
+            </div>
+          </article>
+
+          <article class="trainer-card reveal">
+            <span class="trainer-glow"></span>
+            <img src="/images/trainers/trainer-4.webp" alt="Мария Романова" />
+            <div class="trainer-info">
+              <h3>Мария Романова</h3>
+              <span>Recovery Specialist</span>
+              <p class="trainer-exp">Опыт: <strong>9 лет</strong></p>
+              <ul class="trainer-list">
+                <li>Восстановление</li>
+                <li>Массаж</li>
+                <li>Растяжка</li>
+              </ul>
+              <a href="#contacts" class="trainer-btn">Подробнее</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- EXPERIENCE -->
+    <!-- ===================================== -->
+
+    <section class="experience reveal" id="experience">
+      <div class="container">
+        <div class="experience-top">
+          <div class="experience-heading">
+            <span>EXPERIENCE AZ</span>
+            <h2>Train Hard.<br>Recover Smart.</h2>
+          </div>
+          <div class="experience-text">
+            <p>
+              Пространство, созданное для тех, кто ценит эстетику, технологии
+              и максимальный комфорт. Каждая зона клуба продумана до мельчайших деталей.
+            </p>
+          </div>
+        </div>
+
+        <div class="experience-image">
+          <img
+            src="/images/club.webp"
+            alt="Интерьер AZ Fitness Club"
+            class="parallax"
+          />
+          <div class="experience-card">
+            <span>PREMIUM EQUIPMENT</span>
+            <h3>Technogym Selection</h3>
+            <ul>
+              <li>✔ Technogym</li>
+              <li>✔ Hammer Strength</li>
+              <li>✔ Life Fitness</li>
+              <li>✔ Recovery Zone</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- MEMBERSHIP -->
+    <!-- ===================================== -->
+
+    <section class="membership reveal" id="membership">
+      <div class="container">
+        <div class="section-title">
+          <span>MEMBERSHIP</span>
+          <h2>
+            Выберите свой<br>
+            путь к трансформации
+          </h2>
+          <p>
+            Три уровня поддержки — от старта до полного сопровождения.
+            Каждый абонемент даёт доступ ко всем зонам клуба.
+          </p>
+        </div>
+
+        <div class="membership-grid">
+          <!-- Карточка 1: Старт -->
+          <article class="membership-card reveal">
+
+              <div class="top-line"></div>
+
+
+              <div class="plan-label">
+                  START
+              </div>
+
+              <h3>Старт</h3>
+
+              <div class="plan-price">
+
+                  <span class="currency">₽</span>
+
+                  <span class="amount">5 900</span>
+
+                  <span class="month">/ месяц</span>
+
+              </div>
+
+              <p class="plan-description">
+
+                  Отличный выбор для первого шага
+                  к новой версии себя.
+
+              </p>
+
+              <ul class="plan-list">
+
+                  <li>24/7 доступ</li>
+
+                  <li>4 персональные тренировки</li>
+
+                  <li>План питания</li>
+
+                  <li>Групповые занятия</li>
+
+              </ul>
+
+              <a href="#contacts" class="plan-button">
+
+                  Начать
+
+              </a>
+
+          </article>
+
+          <!-- Карточка 2: Премиум (золотая) -->
+          <article class="membership-card premium reveal">
+
+              <div class="top-line"></div>
+
+
+              <div class="plan-label">
+                  MOST POPULAR
+              </div>
+
+              <h3>Премиум</h3>
+
+              <div class="plan-price">
+
+                  <span class="currency">₽</span>
+
+                  <span class="amount">12 900</span>
+
+                  <span class="month">/ месяц</span>
+
+              </div>
+
+              <p class="plan-description">
+
+                  Максимум возможностей для тех,
+                  кто хочет получать лучший результат.
+
+              </p>
+
+              <ul class="plan-list">
+
+                  <li>Безлимитный доступ в клуб</li>
+
+                  <li>Персональный тренер</li>
+
+                  <li>Индивидуальная программа</li>
+
+                  <li>SPA & Recovery Zone</li>
+
+                  <li>Еженедельный контроль прогресса</li>
+
+              </ul>
+
+              <a href="#contacts" class="plan-button">
+
+                  Выбрать
+
+              </a>
+
+          </article>
+
+          <!-- Карточка 3: VIP -->
+          <article class="membership-card reveal">
+
+              <div class="top-line"></div>
+
+
+              <div class="plan-label">
+                  VIP
+              </div>
+
+              <h3>VIP</h3>
+
+              <div class="plan-price">
+
+                  <span class="currency">₽</span>
+
+                  <span class="amount">19 900</span>
+
+                  <span class="month">/ месяц</span>
+
+              </div>
+
+              <p class="plan-description">
+
+                  Полное сопровождение, персональный сервис
+                  и доступ ко всем привилегиям клуба.
+
+              </p>
+
+              <ul class="plan-list">
+
+                  <li>Все возможности Premium</li>
+
+                  <li>Персональный нутрициолог</li>
+
+                  <li>Массаж и восстановление</li>
+
+                  <li>Приоритетная запись</li>
+
+                  <li>Гостевой безлимит</li>
+
+              </ul>
+
+              <a href="#contacts" class="plan-button">
+
+                  Стать VIP
+
+              </a>
+
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- CONTACTS -->
+    <!-- ===================================== -->
+
+    <section class="contacts reveal" id="contacts">
+      <div class="container">
+        <div class="section-title">
+          <span>CONTACT</span>
+          <h2>Свяжитесь с нами</h2>
+          <p>Мы всегда рады ответить на ваши вопросы</p>
+        </div>
+        <!-- Заглушка для контактов (позже заменим на полноценный блок) -->
+        <div style="text-align:center; padding: 40px 0; color: var(--color-gray);">
+          <p>📍 Адрес: ул. Центральная, 1</p>
+          <p>📞 Телефон: +7 (999) 123-45-67</p>
+          <p>📱 Telegram | WhatsApp | Instagram</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+</body>
+</html>

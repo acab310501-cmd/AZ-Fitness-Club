@@ -1,0 +1,809 @@
+/* ==========================================================
+   TRAINERS
+========================================================== */
+
+.trainers{
+
+    position:relative;
+
+    padding:180px 0;
+
+    overflow:hidden;
+
+    background:
+        linear-gradient(
+            180deg,
+            #050505 0%,
+            #090909 100%
+        );
+
+}
+
+/* ========================================================== */
+
+.trainers::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:900px;
+    height:900px;
+
+    right:-300px;
+    top:-250px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(109,59,255,.18),
+            transparent 70%
+        );
+
+    filter:blur(100px);
+
+    pointer-events:none;
+
+}
+
+/* ========================================================== */
+
+.trainers::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:700px;
+    height:700px;
+
+    left:-220px;
+    bottom:-220px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214,174,77,.12),
+            transparent 70%
+        );
+
+    filter:blur(90px);
+
+    pointer-events:none;
+
+}
+
+/* ========================================================== */
+
+.trainers .container{
+
+    position:relative;
+
+    z-index:2;
+
+    width:min(1400px,92%);
+
+    margin:0 auto;
+
+}
+
+/* ==========================================================
+   TITLE
+========================================================== */
+
+.trainers .section-title{
+
+    max-width:760px;
+
+    margin:0 auto 90px;
+
+    text-align:center;
+
+}
+
+.trainers .section-title span{
+
+    display:block;
+
+    margin-bottom:18px;
+
+    color:var(--color-gold);
+
+    letter-spacing:5px;
+
+    font-size:13px;
+
+    text-transform:uppercase;
+
+}
+
+.trainers .section-title h2{
+
+    margin-bottom:26px;
+
+    color:#fff;
+
+    font-size:clamp(46px,6vw,72px);
+
+    line-height:1.08;
+
+    font-family:"Playfair Display",serif;
+
+}
+
+.trainers .section-title p{
+
+    color:#b6b6b6;
+
+    font-size:19px;
+
+    line-height:1.8;
+
+}
+
+/* ==========================================================
+   GRID
+========================================================== */
+
+.trainers-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:40px;
+
+    align-items:start;
+
+}
+
+/* ==========================================================
+   CARD
+========================================================== */
+
+.trainer-card{
+
+    position:relative;
+
+    min-height:720px;
+
+    overflow:hidden;
+
+    border-radius:34px;
+
+    background:#111;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+
+    cursor:pointer;
+
+    transform-style: preserve-3d;
+    perspective: 1200px;
+    will-change: transform;
+
+}
+
+/* ==========================================================
+   GOLD GLOW (behind the photo, ChatGPT step 2)
+========================================================== */
+
+.trainer-glow{
+
+    position:absolute;
+
+    width:320px;
+    height:320px;
+
+    left:50%;
+    top:45%;
+
+    transform:
+        translate(-50%,-50%)
+        scale(.8);
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(214,174,77,.18),
+            transparent 72%
+        );
+
+    opacity:0;
+
+    transition:.7s;
+
+    filter:blur(40px);
+
+    z-index:0;
+
+    pointer-events:none;
+
+}
+
+.trainer-card:hover .trainer-glow{
+
+    opacity:1;
+
+    transform:
+        translate(-50%,-50%)
+        scale(1.15);
+
+}
+
+/* Большие и маленькие карточки */
+
+.trainer-card:nth-child(2),
+.trainer-card:nth-child(3){
+
+    min-height:580px;
+
+}
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+.trainer-card:hover{
+
+    transform:
+        translateY(-14px)
+        rotateX(2deg)
+        rotateY(-2deg);
+
+    transform-style:preserve-3d;
+
+    border-color:rgba(214,174,77,.35);
+
+    box-shadow:
+        0 35px 90px rgba(0,0,0,.55);
+
+}
+
+/* ==========================================================
+   IMAGE
+========================================================== */
+
+.trainer-card img{
+
+    position:absolute;
+
+    inset:0;
+
+    width:100%;
+
+    height:100%;
+
+    object-fit:cover;
+
+    object-position:center top;
+
+    transition:
+        transform .8s ease,
+        filter .8s ease;
+
+    will-change: transform;
+    backface-visibility: hidden;
+
+}
+
+/* ========================================================== */
+
+.trainer-card:hover img{
+
+    transform:
+        scale(1.12)
+        translateY(-10px);
+
+    filter:
+        brightness(.72)
+        saturate(1.15)
+        contrast(1.05);
+
+}
+
+/* ==========================================================
+   DARK GRADIENT
+========================================================== */
+
+.trainer-card::after{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+
+        linear-gradient(
+
+            to top,
+
+            rgba(0,0,0,.96) 0%,
+
+            rgba(0,0,0,.55) 35%,
+
+            rgba(0,0,0,.12) 62%,
+
+            transparent 85%
+
+        );
+
+    pointer-events:none;
+
+}
+
+/* ==========================================================
+   GOLD BORDER EFFECT
+========================================================== */
+
+.trainer-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    border-radius:34px;
+
+    padding:1px;
+
+    background:
+
+        linear-gradient(
+
+            145deg,
+
+            rgba(214,174,77,.5),
+
+            transparent 30%,
+
+            transparent 70%,
+
+            rgba(109,59,255,.35)
+
+        );
+
+    -webkit-mask:
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+
+    -webkit-mask-composite:xor;
+
+    mask-composite:exclude;
+
+    opacity:0;
+
+    transition:.45s;
+
+    pointer-events:none;
+
+}
+
+/* ========================================================== */
+
+.trainer-card:hover::before{
+
+    opacity:1;
+
+}
+/* ==========================================================
+   INFO PANEL
+========================================================== */
+
+.trainer-info{
+
+    position:absolute;
+
+    left:28px;
+    right:28px;
+    bottom:28px;
+
+    z-index:5;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.10),
+            rgba(255,255,255,.04)
+        );
+
+    backdrop-filter:blur(24px);
+
+    border:1px solid rgba(255,255,255,.10);
+
+    transition:
+        transform .45s ease,
+        background .45s ease,
+        border-color .45s ease;
+
+}
+
+/* ========================================================== */
+
+.trainer-card:hover .trainer-info{
+
+    transform:translateY(-10px);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,.14),
+            rgba(255,255,255,.06)
+        );
+
+    border-color:rgba(255,255,255,.18);
+
+}
+
+/* ==========================================================
+   NAME
+========================================================== */
+
+.trainer-info h3{
+
+    margin:0 0 10px;
+
+    color:#fff;
+
+    font-size:38px;
+
+    line-height:1.1;
+
+    font-family:"Playfair Display",serif;
+
+}
+
+/* ==========================================================
+   SPECIALITY
+========================================================== */
+
+.trainer-info{
+
+    position:absolute;
+
+    left:28px;
+    right:28px;
+    bottom:28px;
+
+    padding:30px;
+
+    border-radius:28px;
+
+    background:rgba(20,20,20,.42);
+
+    backdrop-filter:blur(30px);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    overflow:hidden;
+
+    height:180px;
+
+    transition:
+        height .55s cubic-bezier(.22,.61,.36,1),
+        transform .55s cubic-bezier(.22,.61,.36,1),
+        background .4s;
+
+    display:flex;
+    flex-direction:column;
+
+    z-index:5;
+
+    will-change: transform;
+}
+
+.trainer-card:hover .trainer-info{
+
+    height:340px;
+
+    background:rgba(18,18,18,.62);
+
+}
+/* ==========================================================
+   EXPERIENCE
+========================================================== */
+
+.trainer-exp{
+
+    margin-bottom:22px;
+
+    color:#d8d8d8;
+
+    font-size:16px;
+
+}
+
+.trainer-exp strong{
+
+    color:#fff;
+
+}
+
+/* ==========================================================
+   LIST
+========================================================== */
+
+.trainer-list{
+
+    margin:0;
+
+    padding:0;
+
+    list-style:none;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:12px;
+
+}
+
+.trainer-list li{
+
+    color:#ececec;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+    padding-left:18px;
+
+    position:relative;
+
+}
+
+/* золотые точки */
+
+.trainer-list li::before{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:11px;
+
+    width:6px;
+    height:6px;
+
+    border-radius:50%;
+
+    background:var(--color-gold);
+
+}
+
+/* ==========================================================
+   BUTTON
+========================================================== */
+
+.trainer-btn{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:28px;
+
+    padding:16px 34px;
+
+    border-radius:999px;
+
+    background:linear-gradient(
+        135deg,
+        #D6AE4D,
+        #F1CF76
+    );
+
+    color:#111;
+
+    font-size:14px;
+
+    font-weight:700;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+    text-decoration:none;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+
+    box-shadow:
+        0 12px 35px rgba(214,174,77,.28);
+
+}
+
+/* ======================================== */
+
+.trainer-btn:hover{
+
+    transform:
+        translateY(-3px)
+        scale(1.03);
+
+    filter:brightness(1.05);
+
+    box-shadow:
+        0 20px 45px rgba(214,174,77,.45);
+
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media(max-width:1100px){
+
+    .trainers{
+
+        padding:140px 0;
+
+    }
+
+    .trainers-grid{
+
+        grid-template-columns:1fr;
+
+        gap:32px;
+
+    }
+
+    .trainer-card{
+
+        min-height:650px !important;
+
+    }
+
+}
+
+/* ======================================== */
+
+@media(max-width:768px){
+
+    .trainers{
+
+        padding:100px 0;
+
+    }
+
+    .trainer-card{
+
+        min-height:520px !important;
+
+        border-radius:24px;
+
+    }
+
+    .trainer-info{
+
+        left:20px;
+        right:20px;
+        bottom:20px;
+
+        padding:22px;
+
+        border-radius:20px;
+
+    }
+
+    .trainer-info h3{
+
+        font-size:30px;
+
+    }
+
+    .trainer-info span{
+
+        font-size:12px;
+
+        letter-spacing:2px;
+
+    }
+
+    .trainer-list li{
+
+        font-size:14px;
+
+    }
+
+}
+
+/* ======================================== */
+
+@media(max-width:560px){
+
+    .trainer-card{
+
+        min-height:460px !important;
+
+    }
+
+    .trainer-info{
+
+        padding:18px;
+
+    }
+
+    .trainer-info h3{
+
+        font-size:24px;
+
+    }
+
+    .trainer-btn{
+
+        width:100%;
+
+        padding:15px;
+
+    }
+
+}
+
+/* ==========================================================
+   BACKGROUND GLOW
+========================================================== */
+
+.trainers-glow{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    pointer-events:none;
+
+    filter:blur(120px);
+
+    z-index:0;
+
+    will-change:transform;
+
+}
+
+.trainers-glow-left{
+
+    width:650px;
+    height:650px;
+
+    left:-250px;
+    top:120px;
+
+    background:rgba(214,174,77,.13);
+
+}
+
+.trainers-glow-right{
+
+    width:800px;
+    height:800px;
+
+    right:-320px;
+    bottom:-220px;
+
+    background:rgba(110,74,255,.14);
+
+}

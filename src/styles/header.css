@@ -1,0 +1,158 @@
+.header {
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: min(1400px, 92%);
+    height: 74px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 30px;
+    box-sizing: border-box;
+
+    z-index: 1000;
+
+    border: 1px solid rgba(255,255,255,.08);
+    border-radius: 24px;
+
+    background: rgba(18,18,18,.45);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    transition:
+        transform .45s ease,
+        height .35s ease,
+        background .35s ease,
+        border-color .35s ease,
+        backdrop-filter .35s ease,
+        box-shadow .35s ease;
+}
+
+/* ---------- LOGO ---------- */
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+}
+
+.logo h2 {
+    margin: 0;
+
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: 4px;
+
+    color: var(--color-gold);
+}
+
+.logo span {
+    margin-top: 2px;
+
+    font-size: 12px;
+    letter-spacing: 4px;
+
+    color: rgba(255,255,255,.55);
+}
+
+/* ---------- NAV ---------- */
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.nav a {
+    position: relative;
+
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+
+    transition:
+        color .3s ease,
+        opacity .3s ease;
+
+    font-weight: 500;
+}
+
+.nav a::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+
+    width: 0;
+    height: 2px;
+
+    border-radius: 20px;
+
+    background: var(--color-purple-light);
+
+    transition: width .3s ease;
+}
+
+.nav a:hover {
+    color: white;
+}
+
+.nav a:hover::after {
+    width: 100%;
+}
+
+/* ---------- BUTTON ---------- */
+
+.join-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 14px 28px;
+
+    border-radius: 999px;
+
+    background: var(--gradient-main);
+
+    color: white;
+    text-decoration: none;
+
+    font-weight: 600;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        filter .35s ease;
+}
+
+.join-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow: var(--shadow-purple);
+
+    filter: brightness(1.08);
+}
+
+/* ---------- SCROLL ---------- */
+
+.header-scrolled {
+    height: 64px;
+
+    background: rgba(10,10,10,.82);
+
+    border-color: rgba(255,255,255,.12);
+
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+
+    box-shadow: 0 10px 40px rgba(0,0,0,.25);
+}
+
+/* ---------- HIDE ---------- */
+
+.header-hidden {
+    transform: translate(-50%, -120%);
+}
