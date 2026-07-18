@@ -3,155 +3,106 @@
    MAIN ENTRY
 ========================================================== */
 
-// ===============================
-// GLOBAL STYLES
-// ===============================
-
-import "./styles/reset.css";
 import "./styles/variables.css";
+import "./styles/reset.css";
 import "./styles/base.css";
 import "./styles/header.css";
 import "./styles/hero.css";
-import "./styles/about.css";
 import "./styles/animations.css";
 import "./styles/cinema-gallery.css";
-
-
-// ===============================
-// COMPONENTS
-// ===============================
 
 import { initCinemaGalleries } from "./components/CinemaGallery.js";
 
 
 // ==========================================================
 // PRELOADER
+// Не ждём загрузки всех изображений и видео.
+// Сайт показывается максимум через 1.2 секунды.
 // ==========================================================
 
-window.addEventListener("load", () => {
+const preloader = document.getElementById("preloader");
 
-    const preloader =
-        document.getElementById("preloader");
-
-    if (!preloader) {
-
-        return;
-
-    }
+if (preloader) {
 
     setTimeout(() => {
 
-        preloader.classList.add("is-hidden");
+        preloader.classList.add("hidden");
 
-    }, 900);
+    }, 1200);
 
-});
+}
 
 
 // ==========================================================
 // CINEMA GALLERY
 // ==========================================================
 
-document.addEventListener(
+document.addEventListener("DOMContentLoaded", () => {
 
-    "DOMContentLoaded",
+    initCinemaGalleries();
 
-    () => {
+});
 
-        initCinemaGalleries();
+
+// ==========================================================
+// GOLDEN PARTICLES
+// ==========================================================
+
+const particlesContainer =
+    document.querySelector(".particles");
+
+if (particlesContainer) {
+
+    for (let i = 0; i < 40; i++) {
+
+        const particle =
+            document.createElement("span");
+
+        particle.className = "particle";
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.top =
+            Math.random() * 100 + "%";
+
+        particle.style.animationDelay =
+            Math.random() * 5 + "s";
+
+        particle.style.animationDuration =
+            5 + Math.random() * 8 + "s";
+
+        particlesContainer.appendChild(particle);
 
     }
 
-);
+}
 
 
 // ==========================================================
 // CURSOR GLOW
 // ==========================================================
 
-const cursorGlow =
+const glow =
     document.querySelector(".cursor-glow");
 
-if (cursorGlow) {
+if (glow) {
 
-    window.addEventListener(
+    document.addEventListener("mousemove", (event) => {
 
-        "mousemove",
+        glow.style.left =
+            event.clientX + "px";
 
-        (event) => {
+        glow.style.top =
+            event.clientY + "px";
 
-            cursorGlow.style.transform =
-
-                `translate3d(
-
-                    ${event.clientX}px,
-
-                    ${event.clientY}px,
-
-                    0
-
-                )`;
-
-        }
-
-    );
+    });
 
 }
 
 
 // ==========================================================
-// PARTICLES
+// LOG
 // ==========================================================
 
-const particles =
-    document.querySelector(".particles");
-
-if (particles) {
-
-    const particleCount = 25;
-
-    for (
-
-        let i = 0;
-
-        i < particleCount;
-
-        i++
-
-    ) {
-
-        const particle =
-            document.createElement("span");
-
-        particle.className =
-            "particle";
-
-        particle.style.left =
-            `${Math.random() * 100}%`;
-
-        particle.style.top =
-            `${Math.random() * 100}%`;
-
-        particle.style.animationDelay =
-            `${Math.random() * 5}s`;
-
-        particles.appendChild(
-
-            particle
-
-        );
-
-    }
-
-}
-
-
-// ==========================================================
-// AZ FITNESS CLUB LOADED
-// ==========================================================
-
-console.log(
-
-    "AZ Fitness Club loaded 🚀"
-
-);
+console.log("🚀 AZ Fitness Club запущен!");
