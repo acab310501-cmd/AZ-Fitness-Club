@@ -20,8 +20,9 @@ import "./styles/trainers.css";
 import "./styles/experience.css";
 import "./styles/membership.css";
 
-// Стили галерей (если используете)
-import "./styles/carousel.css";        // простая карусель
+// Стили для пространств и галерей
+import "./styles/spaces.css";          // <-- новый файл
+import "./styles/carousel.css";        // простая карусель (если используется)
 import "./styles/cinema-gallery.css";  // кинематографическая галерея
 
 // ==========================================================
@@ -35,8 +36,6 @@ import { initTrainers } from "./scripts/trainers";
 import { initExperience } from "./scripts/experience";
 import { initAnimations } from "./scripts/animations";
 import { initCinemaGalleries } from "./components/CinemaGallery.js";
-// Если нужна простая карусель, можно импортировать и её:
-// import { initGallery } from "./scripts/gallery";
 
 // ==========================================================
 // ПРЕЛОАДЕР
@@ -90,10 +89,7 @@ function initApp() {
     initExperience();
     initAnimations();
     initCinemaGalleries();
-    initGallery();
-
-    // если нужна простая карусель:
-    // initGallery();
+    initGallery(); // теперь только один вызов
 }
 
 // Запускаем после загрузки DOM
