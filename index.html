@@ -323,9 +323,9 @@
         </div>
 
         <div class="spaces-grid">
-          <!-- Большой тренажёрный зал -->
+          <!-- Большой тренажёрный зал (обзорная фотография) -->
           <article class="space-card space-large">
-            <img src="/images/spaces/gym.webp" alt="Основной тренажёрный зал">
+            <img src="/images/spaces/gym-1.webp" alt="Основной тренажёрный зал">
             <div class="space-overlay"></div>
             <div class="space-content">
               <span>ОСНОВНОЙ ЗАЛ</span>
@@ -392,7 +392,7 @@
     </section>
 
     <!-- ===================================== -->
-    <!-- CLUB SPACE (детально + галерея) -->
+    <!-- CLUB SPACE (детально + Cinema Gallery) -->
     <!-- ===================================== -->
 
     <section class="club-space reveal">
@@ -412,20 +412,78 @@
         </ul>
       </div>
 
-      <div class="space-gallery">
-        <button class="gallery-prev" aria-label="Предыдущее фото">←</button>
-        <div class="gallery-slides">
-          <img class="gallery-slide active" src="/images/spaces/gym%201.webp" alt="Силовой зал 1">
-          <img class="gallery-slide" src="/images/spaces/gym%202.webp" alt="Силовой зал 2">
-          <img class="gallery-slide" src="/images/spaces/gym%203.webp" alt="Силовой зал 3">
-          <img class="gallery-slide" src="/images/spaces/gym%204.webp" alt="Силовой зал 4">
+      <!-- КИНОГАЛЕРЕЯ -->
+      <div class="cinema-gallery" data-gallery>
+        <div class="cinema-gallery__viewport">
+          <!-- Слайд 1 -->
+          <div class="cinema-gallery__slide" data-slide>
+            <div class="cinema-gallery__media">
+              <img src="/images/spaces/gym-1.webp" alt="Главный тренировочный зал" />
+            </div>
+            <div class="cinema-gallery__overlay"></div>
+            <div class="cinema-gallery__content">
+              <span class="cinema-gallery__number">01</span>
+              <h3>Главный тренировочный зал</h3>
+              <p>Просторный зал с панорамным остеклением и премиальным оборудованием.</p>
+            </div>
+          </div>
+
+          <!-- Слайд 2 -->
+          <div class="cinema-gallery__slide" data-slide>
+            <div class="cinema-gallery__media">
+              <img src="/images/spaces/gym-2.webp" alt="Свободные веса" />
+            </div>
+            <div class="cinema-gallery__overlay"></div>
+            <div class="cinema-gallery__content">
+              <span class="cinema-gallery__number">02</span>
+              <h3>Свободные веса</h3>
+              <p>Профессиональные стойки Eleiko, олимпийские платформы и полный набор гантелей.</p>
+            </div>
+          </div>
+
+          <!-- Слайд 3 -->
+          <div class="cinema-gallery__slide" data-slide>
+            <div class="cinema-gallery__media">
+              <img src="/images/spaces/gym-3.webp" alt="Кардиозона" />
+            </div>
+            <div class="cinema-gallery__overlay"></div>
+            <div class="cinema-gallery__content">
+              <span class="cinema-gallery__number">03</span>
+              <h3>Кардиозона</h3>
+              <p>Беговые дорожки, велотренажёры и эллипсы с персональными экранами.</p>
+            </div>
+          </div>
+
+          <!-- Слайд 4 -->
+          <div class="cinema-gallery__slide" data-slide>
+            <div class="cinema-gallery__media">
+              <img src="/images/spaces/gym-4.webp" alt="Функциональный тренинг" />
+            </div>
+            <div class="cinema-gallery__overlay"></div>
+            <div class="cinema-gallery__content">
+              <span class="cinema-gallery__number">04</span>
+              <h3>Функциональный тренинг</h3>
+              <p>Пространство для кросс-тренинга, канатов, саней и работы с собственным весом.</p>
+            </div>
+          </div>
+
+          <!-- Слайд 5 -->
+          <div class="cinema-gallery__slide" data-slide>
+            <div class="cinema-gallery__media">
+              <img src="/images/spaces/gym-5.webp" alt="Зона восстановления" />
+            </div>
+            <div class="cinema-gallery__overlay"></div>
+            <div class="cinema-gallery__content">
+              <span class="cinema-gallery__number">05</span>
+              <h3>Зона восстановления</h3>
+              <p>Сауна, массажные кресла и пространство для релаксации после тренировки.</p>
+            </div>
+          </div>
         </div>
-        <button class="gallery-next" aria-label="Следующее фото">→</button>
-        <div class="gallery-dots">
-          <span class="gallery-dot active"></span>
-          <span class="gallery-dot"></span>
-          <span class="gallery-dot"></span>
-          <span class="gallery-dot"></span>
+
+        <!-- Прогресс-бар (золотая линия) -->
+        <div class="cinema-gallery__progress">
+          <span class="cinema-gallery__progress-bar"></span>
         </div>
       </div>
     </section>
