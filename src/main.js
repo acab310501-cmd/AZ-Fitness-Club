@@ -1,90 +1,157 @@
-// ============================================================
-// STYLES (правильный порядок: сначала переменные)
-// ============================================================
-import "./styles/variables.css";
+/* ==========================================================
+   AZ FITNESS CLUB
+   MAIN ENTRY
+========================================================== */
+
+// ===============================
+// GLOBAL STYLES
+// ===============================
+
 import "./styles/reset.css";
+import "./styles/variables.css";
 import "./styles/base.css";
 import "./styles/header.css";
 import "./styles/hero.css";
 import "./styles/about.css";
-import "./styles/stats.css";
-import "./styles/trainers.css";
-import "./styles/experience.css";  // только один раз
-import "./styles/membership.css";   // добавляем новую секцию
 import "./styles/animations.css";
+import "./styles/cinema-gallery.css";
 
-// ============================================================
-// MODULES
-// ============================================================
-import { initHeader } from "./scripts/header";
-import { initHero } from "./scripts/hero";
-import { initStats } from "./scripts/stats";
-import { initTrainers } from "./scripts/trainers";
-import { initExperience } from "./scripts/experience";
-import { initAnimations } from "./scripts/animations";
 
-// ============================================================
+// ===============================
+// COMPONENTS
+// ===============================
+
+import { initCinemaGalleries } from "./components/CinemaGallery.js";
+
+
+// ==========================================================
 // PRELOADER
-// ============================================================
-const preloader = document.getElementById("preloader");
+// ==========================================================
 
 window.addEventListener("load", () => {
+
+    const preloader =
+        document.getElementById("preloader");
+
+    if (!preloader) {
+
+        return;
+
+    }
+
     setTimeout(() => {
-        preloader?.classList.add("hidden");
-    }, 1500);
+
+        preloader.classList.add("is-hidden");
+
+    }, 900);
+
 });
 
-// ============================================================
+
+// ==========================================================
+// CINEMA GALLERY
+// ==========================================================
+
+document.addEventListener(
+
+    "DOMContentLoaded",
+
+    () => {
+
+        initCinemaGalleries();
+
+    }
+
+);
+
+
+// ==========================================================
+// CURSOR GLOW
+// ==========================================================
+
+const cursorGlow =
+    document.querySelector(".cursor-glow");
+
+if (cursorGlow) {
+
+    window.addEventListener(
+
+        "mousemove",
+
+        (event) => {
+
+            cursorGlow.style.transform =
+
+                `translate3d(
+
+                    ${event.clientX}px,
+
+                    ${event.clientY}px,
+
+                    0
+
+                )`;
+
+        }
+
+    );
+
+}
+
+
+// ==========================================================
 // PARTICLES
-// ============================================================
-const particles = document.querySelector(".particles");
+// ==========================================================
+
+const particles =
+    document.querySelector(".particles");
 
 if (particles) {
-    for (let i = 0; i < 40; i++) {
-        const particle = document.createElement("span");
-        particle.className = "particle";
-        particle.style.left = Math.random() * 100 + "%";
-        particle.style.top = Math.random() * 100 + "%";
-        particle.style.animationDelay = Math.random() * 5 + "s";
-        particle.style.animationDuration = 5 + Math.random() * 8 + "s";
-        particles.appendChild(particle);
+
+    const particleCount = 25;
+
+    for (
+
+        let i = 0;
+
+        i < particleCount;
+
+        i++
+
+    ) {
+
+        const particle =
+            document.createElement("span");
+
+        particle.className =
+            "particle";
+
+        particle.style.left =
+            `${Math.random() * 100}%`;
+
+        particle.style.top =
+            `${Math.random() * 100}%`;
+
+        particle.style.animationDelay =
+            `${Math.random() * 5}s`;
+
+        particles.appendChild(
+
+            particle
+
+        );
+
     }
+
 }
 
-// ============================================================
-// CURSOR GLOW
-// ============================================================
-const glow = document.querySelector(".cursor-glow");
 
-if (glow) {
-    document.addEventListener("mousemove", (e) => {
-        glow.style.left = e.clientX + "px";
-        glow.style.top = e.clientY + "px";
-    });
+// ==========================================================
+// AZ FITNESS CLUB LOADED
+// ==========================================================
 
-    document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("mouseenter", () => {
-            glow.classList.add("active");
-        });
-        el.addEventListener("mouseleave", () => {
-            glow.classList.remove("active");
-        });
-    });
-}
+console.log(
 
-// ============================================================
-// APP
-// ============================================================
-function initApp() {
-    initHeader();
-    initHero();
-    initStats();
-    initTrainers();
-    initExperience();
-    if (typeof initMembership === "function") initMembership(); // безопасный вызов
-    initAnimations();
-}
+    "AZ Fitness Club loaded 🚀"
 
-initApp();
-
-console.log("🚀 AZ Fitness Club loaded");
+);

@@ -1,0 +1,477 @@
+/* ==========================================================
+   AZ FITNESS CLUB
+   CINEMA GALLERY
+========================================================== */
+
+.cinema-gallery {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-top: 80px;
+
+    user-select: none;
+
+    touch-action: pan-y;
+
+    cursor: grab;
+
+    overflow: hidden;
+
+    border-radius: 28px;
+
+    background: #0a0a0a;
+
+}
+
+.cinema-gallery:active {
+
+    cursor: grabbing;
+
+}
+
+
+/* ==========================================================
+   PROGRESS BAR
+========================================================== */
+
+.cinema-gallery__progress {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 3px;
+
+    z-index: 20;
+
+    background: rgba(255,255,255,.12);
+
+    overflow: hidden;
+
+}
+
+.cinema-gallery__progress-bar {
+
+    display: block;
+
+    width: 0%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+
+            90deg,
+
+            #b88a44,
+
+            #f2d29a,
+
+            #b88a44
+
+        );
+
+    box-shadow:
+
+        0 0 18px rgba(212,170,100,.75);
+
+}
+
+
+/* ==========================================================
+   VIEWPORT
+========================================================== */
+
+.cinema-gallery__viewport {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 720px;
+
+    overflow: hidden;
+
+}
+
+
+/* ==========================================================
+   SLIDE
+========================================================== */
+
+.cinema-gallery__slide {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+    transform: translate3d(100%, 0, 0);
+
+    will-change: transform;
+
+}
+
+
+/* ==========================================================
+   MEDIA
+========================================================== */
+
+.cinema-gallery__media {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    overflow: hidden;
+
+}
+
+.cinema-gallery__media img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    transform: scale(1.04);
+
+    will-change: transform;
+
+}
+
+
+/* ==========================================================
+   KEN BURNS
+========================================================== */
+
+.cinema-gallery__slide.is-active
+
+.cinema-gallery__media img {
+
+    animation:
+
+        cinemaKenBurns
+
+        6s
+
+        ease-out
+
+        forwards;
+
+}
+
+@keyframes cinemaKenBurns {
+
+    0% {
+
+        transform:
+
+            scale(1.04)
+
+            translate3d(0, 0, 0);
+
+    }
+
+    100% {
+
+        transform:
+
+            scale(1.1)
+
+            translate3d(-1%, -1%, 0);
+
+    }
+
+}
+
+
+/* ==========================================================
+   OVERLAY
+========================================================== */
+
+.cinema-gallery__overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    background:
+
+        linear-gradient(
+
+            180deg,
+
+            rgba(0,0,0,.08)
+
+            0%,
+
+            rgba(0,0,0,.1)
+
+            40%,
+
+            rgba(0,0,0,.82)
+
+            100%
+
+        );
+
+}
+
+
+/* ==========================================================
+   CONTENT
+========================================================== */
+
+.cinema-gallery__content {
+
+    position: absolute;
+
+    left: 64px;
+
+    right: 64px;
+
+    bottom: 56px;
+
+    z-index: 5;
+
+    max-width: 680px;
+
+    color: var(--color-white);
+
+}
+
+.cinema-gallery__number {
+
+    display: block;
+
+    margin-bottom: 20px;
+
+    font-size: 13px;
+
+    letter-spacing: 3px;
+
+    color: var(--color-gold);
+
+}
+
+.cinema-gallery__content h3 {
+
+    margin: 0 0 18px;
+
+    font-family: var(--font-title);
+
+    font-size: clamp(42px, 5vw, 76px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+}
+
+.cinema-gallery__content p {
+
+    max-width: 520px;
+
+    margin: 0;
+
+    color: rgba(255,255,255,.72);
+
+    font-size: 18px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ==========================================================
+   SECTION HEADER
+========================================================== */
+
+.cinema-gallery__header {
+
+    max-width: 820px;
+
+    margin-bottom: 70px;
+
+}
+
+.cinema-gallery__header .section-eyebrow {
+
+    display: inline-block;
+
+    margin-bottom: 24px;
+
+    color: var(--color-gold);
+
+    font-size: 12px;
+
+    letter-spacing: 5px;
+
+}
+
+.cinema-gallery__title {
+
+    margin: 0 0 26px;
+
+    font-family: var(--font-title);
+
+    font-size: clamp(48px, 7vw, 96px);
+
+    line-height: .98;
+
+    font-weight: 500;
+
+}
+
+.cinema-gallery__intro {
+
+    max-width: 580px;
+
+    margin: 0;
+
+    color: var(--color-gray);
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+}
+
+
+/* ==========================================================
+   HOVER
+========================================================== */
+
+@media (hover: hover) {
+
+    .cinema-gallery__media img {
+
+        transition:
+
+            transform
+
+            1.2s
+
+            cubic-bezier(.22,.61,.36,1);
+
+    }
+
+}
+
+
+/* ==========================================================
+   TABLET
+========================================================== */
+
+@media (max-width: 992px) {
+
+    .cinema-gallery {
+
+        border-radius: 20px;
+
+    }
+
+    .cinema-gallery__viewport {
+
+        min-height: 620px;
+
+    }
+
+    .cinema-gallery__content {
+
+        left: 40px;
+
+        right: 40px;
+
+        bottom: 42px;
+
+    }
+
+}
+
+
+/* ==========================================================
+   MOBILE
+========================================================== */
+
+@media (max-width: 640px) {
+
+    .cinema-gallery {
+
+        margin-top: 50px;
+
+        border-radius: 16px;
+
+    }
+
+    .cinema-gallery__viewport {
+
+        min-height: 600px;
+
+    }
+
+    .cinema-gallery__content {
+
+        left: 24px;
+
+        right: 24px;
+
+        bottom: 32px;
+
+    }
+
+    .cinema-gallery__content h3 {
+
+        font-size: 42px;
+
+    }
+
+    .cinema-gallery__content p {
+
+        font-size: 16px;
+
+        line-height: 1.6;
+
+    }
+
+    .cinema-gallery__number {
+
+        font-size: 11px;
+
+        letter-spacing: 2px;
+
+    }
+
+    .cinema-gallery__header {
+
+        margin-bottom: 42px;
+
+    }
+
+}
