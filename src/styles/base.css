@@ -88,3 +88,105 @@ main {
   height: 400px;
   background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%);
 }
+/* ==========================================================
+   GLOBAL TYPOGRAPHY
+========================================================== */
+
+/* ---------- Основные заголовки ---------- */
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: var(--font-heading);
+    color: #fff;
+    letter-spacing: var(--tracking-title);
+    line-height: var(--lh-heading);
+    font-weight: 600;
+    margin: 0;
+}
+
+/* ---------- Размеры ---------- */
+
+h1 {
+    font-size: var(--fs-display);
+    line-height: var(--lh-display);
+}
+
+h2 {
+    font-size: var(--fs-h2);
+}
+
+h3 {
+    font-size: var(--fs-h3);
+}
+
+h4 {
+    font-size: var(--fs-h4);
+}
+
+/* ---------- Основной текст ---------- */
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--fs-body);
+    line-height: var(--lh-body);
+    color: #d9d9d9;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+/* ---------- Параграфы ---------- */
+
+p {
+    margin: 0;
+    color: #bdbdbd;
+    line-height: var(--lh-body);
+}
+
+/* ---------- Маленькие золотые метки ---------- */
+
+.section-label,
+.hero-sub,
+.section-title span {
+    display: inline-block;
+    color: var(--color-gold);
+    font-size: var(--fs-label);
+    font-weight: 600;
+    letter-spacing: var(--tracking-label);
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+/* ---------- Текст секций ---------- */
+
+.section-title p {
+    max-width: 720px;
+    margin: 22px auto 0;
+    font-size: 19px;
+    line-height: 1.9;
+    color: #b8b8b8;
+}
+
+/* ---------- Ссылки ---------- */
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* ---------- Адаптив ---------- */
+
+@media (max-width: 768px) {
+    body {
+        font-size: 16px;
+    }
+
+    h2 {
+        font-size: clamp(38px, 8vw, 52px);
+    }
+
+    h3 {
+        font-size: 28px;
+    }
+}
