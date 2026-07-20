@@ -18,6 +18,7 @@ import "./styles/stats.css";
 import "./styles/trainers.css";
 import "./styles/experience.css";
 import "./styles/spaces.css";
+import "./styles/cinema-gallery.css";
 import "./styles/membership.css";
 import "./styles/animations.css";
 import "./styles/themes.css";
@@ -27,12 +28,12 @@ import "./styles/themes.css";
 // SCRIPTS
 // ==========================================================
 
-import "./scripts/header.js";
-import "./scripts/hero.js";
-import "./scripts/animations.js";
-import "./scripts/stats.js";
-import "./scripts/trainers.js";
-import "./scripts/experience.js";
+import { initHeader } from "./scripts/header.js";
+import { initHero } from "./scripts/hero.js";
+import { initAnimations } from "./scripts/animations.js";
+import { initStats } from "./scripts/stats.js";
+import { initTrainers } from "./scripts/trainers.js";
+import { initExperience } from "./scripts/experience.js";
 import "./scripts/theme.js";
 import "./scripts/cursor.js";
 
@@ -103,6 +104,16 @@ document.addEventListener(
         // Запускаем Cinema Gallery
 
         initCinemaGalleries();
+
+
+        // Запускаем остальные модули
+
+        initHeader();
+        initHero();
+        initStats();
+        initTrainers();
+        initExperience();
+        initAnimations();
 
 
     }

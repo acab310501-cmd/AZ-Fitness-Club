@@ -62,6 +62,8 @@ class CinemaGallery {
 
         this.dragDistance = 0;
 
+        this.dragWidth = 0;
+
         this.init();
 
     }
@@ -343,6 +345,11 @@ class CinemaGallery {
 
         this.dragDistance = 0;
 
+        this.dragWidth =
+            this.gallery.getBoundingClientRect().width || 1;
+
+        this.gallery.classList.add("is-dragging");
+
         this.pauseAutoplay();
 
     }
@@ -364,6 +371,58 @@ class CinemaGallery {
 
             this.startX;
 
+        this.updateDragPreview();
+
+    }
+
+
+    updateDragPreview() {
+
+        const total = this.slides.length;
+
+        if (total < 2) {
+            return;
+        }
+
+        const dx = this.dragDistance;
+
+        // 1 = свайп к следующему слайду, -1 = к предыдущему
+        const direction = dx < 0 ? 1 : -1;
+
+        const targetIndex =
+            (this.currentIndex + direction + total) % total;
+
+        const current = this.slides[this.currentIndex];
+        const target = this.slides[targetIndex];
+
+        this.slides.forEach((slide, index) => {
+            if (index !== this.currentIndex && index !== targetIndex) {
+                slide.style.transform = "";
+                slide.style.opacity = "";
+                slide.style.visibility = "";
+            }
+        });
+
+        current.style.transform = `translateX(${dx}px)`;
+
+        target.style.visibility = "visible";
+        target.style.opacity = String(
+            Math.min(Math.abs(dx) / this.dragWidth, 1)
+        );
+        target.style.transform =
+            `translateX(${dx - direction * this.dragWidth}px)`;
+
+    }
+
+
+    clearDragPreview() {
+
+        this.slides.forEach((slide) => {
+            slide.style.transform = "";
+            slide.style.opacity = "";
+            slide.style.visibility = "";
+        });
+
     }
 
 
@@ -375,13 +434,17 @@ class CinemaGallery {
 
         }
 
-        const threshold = 60;
+        const threshold = Math.max(60, this.dragWidth * 0.18);
 
         const distance =
 
             this.dragDistance;
 
         this.isDragging = false;
+
+        this.gallery.classList.remove("is-dragging");
+
+        this.clearDragPreview();
 
         if (
 

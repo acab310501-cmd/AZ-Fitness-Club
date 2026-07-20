@@ -34,7 +34,7 @@ main {
   transition: opacity 1s ease, visibility 1s ease;
 }
 
-#preloader.hidden {
+#preloader.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;

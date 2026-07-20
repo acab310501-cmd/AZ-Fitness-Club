@@ -59,9 +59,17 @@ function createSpace(space){
 
 function createGallery(space){
 
+    const hasMultiple = space.images.length > 1;
+
     return `
 
 <div class="cinema-gallery" data-gallery>
+
+    ${hasMultiple ? `
+    <div class="cinema-gallery__progress" data-progress-track>
+        <span class="cinema-gallery__progress-bar" data-progress></span>
+    </div>
+    ` : ""}
 
     <div class="cinema-gallery__viewport">
 
@@ -69,8 +77,22 @@ function createGallery(space){
 
     </div>
 
+    ${hasMultiple ? createDots(space) : ""}
+
 </div>
 
+`;
+
+}
+
+function createDots(space){
+
+    return `
+<div class="cinema-gallery__dots">
+    ${space.images
+        .map((_, index) => `<button class="cinema-gallery__dot" data-dot aria-label="Слайд ${index + 1}"></button>`)
+        .join("")}
+</div>
 `;
 
 }
