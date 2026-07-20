@@ -19,11 +19,11 @@ export const spaces = [
         ],
 
         images: [
-            "/images/spaces/gym-1.webp",
-            "/images/spaces/gym-2.webp",
-            "/images/spaces/gym-3.webp",
-            "/images/spaces/gym-4.webp",
-            "/images/spaces/gym-5.webp"
+            "images/spaces/gym-1.webp",
+            "images/spaces/gym-2.webp",
+            "images/spaces/gym-3.webp",
+            "images/spaces/gym-4.webp",
+            "images/spaces/gym-5.webp"
         ],
 
         captions: [
@@ -61,10 +61,10 @@ export const spaces = [
         ],
 
         images: [
-            "/images/spaces/cardio.webp",
-            "/images/spaces/workout.webp",
-            "/images/spaces/group.webp",
-            "/images/spaces/fight.webp"
+            "images/spaces/cardio.webp",
+            "images/spaces/workout.webp",
+            "images/spaces/group.webp",
+            "images/spaces/fight.webp"
         ],
 
         captions: [
@@ -99,7 +99,7 @@ export const spaces = [
         ],
 
         images: [
-            "/images/spaces/pool.webp"
+            "images/spaces/pool.webp"
         ],
 
         captions: [
@@ -129,10 +129,10 @@ export const spaces = [
         ],
 
         images: [
-            "/images/spaces/spa.webp",
-            "/images/spaces/sauna.webp",
-            "/images/spaces/massage.webp",
-            "/images/spaces/recovery.webp"
+            "images/spaces/spa.webp",
+            "images/spaces/sauna.webp",
+            "images/spaces/massage.webp",
+            "images/spaces/recovery.webp"
         ],
 
         captions: [

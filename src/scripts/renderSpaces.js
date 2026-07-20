@@ -108,7 +108,7 @@ function createSlides(space){
     <div class="cinema-gallery__media">
 
         <img
-            src="${image}"
+            src="${import.meta.env.BASE_URL}${image}"
             alt="${space.captions[index]}"
             loading="lazy"
         >
