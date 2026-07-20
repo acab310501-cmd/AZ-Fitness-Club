@@ -4,14 +4,14 @@
 ========================================================== */
 
 // ==========================================================
-// СТИЛИ (обязательный порядок: сначала переменные)
+// СТИЛИ
 // ==========================================================
 import "./styles/variables.css";
 import "./styles/reset.css";
 import "./styles/base.css";
 import "./styles/animations.css";
 
-// Стили секций
+// Секции
 import "./styles/header.css";
 import "./styles/hero.css";
 import "./styles/about.css";
@@ -19,84 +19,139 @@ import "./styles/stats.css";
 import "./styles/trainers.css";
 import "./styles/experience.css";
 import "./styles/membership.css";
+import "./styles/spaces.css";
 
-// Стили для пространств и галерей
-import "./styles/spaces.css";          // <-- новый файл
-import "./styles/carousel.css";        // простая карусель (если используется)
-import "./styles/cinema-gallery.css";  // кинематографическая галерея
-
-// ==========================================================
-// МОДУЛИ (инициализация)
-// ==========================================================
-import { initGallery } from "./scripts/gallery";
-import { initHeader } from "./scripts/header";
-import { initHero } from "./scripts/hero";
-import { initStats } from "./scripts/stats";
-import { initTrainers } from "./scripts/trainers";
-import { initExperience } from "./scripts/experience";
-import { initAnimations } from "./scripts/animations";
-import { initCinemaGalleries } from "./components/CinemaGallery.js";
+// Новая галерея
+import "./styles/cinema-gallery.css";
 
 // ==========================================================
-// ПРЕЛОАДЕР
+// МОДУЛИ
 // ==========================================================
+import { initHeader } from "./scripts/header.js";
+import { initHero } from "./scripts/hero.js";
+import { initStats } from "./scripts/stats.js";
+import { initTrainers } from "./scripts/trainers.js";
+import { initExperience } from "./scripts/experience.js";
+import { initAnimations } from "./scripts/animations.js";
+
+// Новая галерея пространств
+import { initCinemaGallery } from "./components/CinemaGallery.js";
+import { renderSpaces } from "./scripts/renderSpaces.js";
+
+// ==========================================================
+// PRELOADER
+// ==========================================================
+
 const preloader = document.getElementById("preloader");
+
 if (preloader) {
+
     setTimeout(() => {
+
         preloader.classList.add("hidden");
+
     }, 1200);
+
 }
 
 // ==========================================================
-// ЗОЛОТЫЕ ЧАСТИЦЫ (для Hero)
+// GOLD PARTICLES
 // ==========================================================
-const particlesContainer = document.querySelector(".particles");
-if (particlesContainer) {
+
+const particles = document.querySelector(".particles");
+
+if (particles) {
+
     for (let i = 0; i < 40; i++) {
+
         const particle = document.createElement("span");
+
         particle.className = "particle";
+
         particle.style.left = Math.random() * 100 + "%";
+
         particle.style.top = Math.random() * 100 + "%";
+
         particle.style.animationDelay = Math.random() * 5 + "s";
+
         particle.style.animationDuration = 5 + Math.random() * 8 + "s";
-        particlesContainer.appendChild(particle);
+
+        particles.appendChild(particle);
+
     }
+
 }
 
 // ==========================================================
-// ГЛОУ-КУРСОР (лёгкое свечение)
+// CURSOR GLOW
 // ==========================================================
+
 const glow = document.querySelector(".cursor-glow");
+
 if (glow) {
+
     document.addEventListener("mousemove", (event) => {
+
         glow.style.left = event.clientX + "px";
+
         glow.style.top = event.clientY + "px";
+
     });
-    document.querySelectorAll("a, button").forEach((el) => {
-        el.addEventListener("mouseenter", () => glow.classList.add("active"));
-        el.addEventListener("mouseleave", () => glow.classList.remove("active"));
+
+    document.querySelectorAll("a, button").forEach((element) => {
+
+        element.addEventListener("mouseenter", () => {
+
+            glow.classList.add("active");
+
+        });
+
+        element.addEventListener("mouseleave", () => {
+
+            glow.classList.remove("active");
+
+        });
+
     });
+
 }
 
 // ==========================================================
-// ЗАПУСК ВСЕХ МОДУЛЕЙ
+// INIT APP
 // ==========================================================
+
 function initApp() {
+
     initHeader();
+
     initHero();
+
     initStats();
+
     initTrainers();
+
     initExperience();
+
     initAnimations();
+
+    renderSpaces();
+
     initCinemaGalleries();
-    initGallery(); // теперь только один вызов
+
 }
 
-// Запускаем после загрузки DOM
+// ==========================================================
+// START
+// ==========================================================
+
 if (document.readyState === "loading") {
+
     document.addEventListener("DOMContentLoaded", initApp);
+
 } else {
+
     initApp();
+
 }
 
-console.log("🚀 AZ Fitness Club запущен!");
+console.log("🚀 AZ Fitness Club started");

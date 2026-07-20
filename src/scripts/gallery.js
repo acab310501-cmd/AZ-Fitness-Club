@@ -1,83 +1,103 @@
-export function initGallery() {
+// ======================================================
+// AZ FITNESS CLUB
+// DATA FOR CINEMA GALLERY
+// ======================================================
 
-    const galleries = document.querySelectorAll(".space-gallery");
+export const spaces = [
 
-    if (!galleries.length) return;
+    {
+        id: "gym",
 
-    galleries.forEach((gallery) => {
+        number: "01",
 
-        const slides = gallery.querySelectorAll(".gallery-slide");
+        title: "Силовой зал",
 
-        const prev = gallery.querySelector(".gallery-prev");
+        subtitle:
+            "Просторный тренировочный зал с профессиональным оборудованием Technogym, Hammer Strength и отдельной зоной свободных весов.",
 
-        const next = gallery.querySelector(".gallery-next");
+        tags: [
+            "Technogym Artis",
+            "Hammer Strength",
+            "Eleiko",
+            "Свободные веса",
+            "Функциональная зона"
+        ],
 
-        const dots = gallery.querySelectorAll(".gallery-dot");
+        images: [
+            "/assets/images/gallery/gym/gym-01.webp",
+            "/assets/images/gallery/gym/gym-02.webp",
+            "/assets/images/gallery/gym/gym-03.webp",
+            "/assets/images/gallery/gym/gym-04.webp",
+            "/assets/images/gallery/gym/gym-05.webp"
+        ]
+    },
 
-        let current = 0;
+    {
+        id: "functional",
 
-        function show(index){
+        number: "02",
 
-            slides.forEach((slide)=>{
+        title: "Функциональный тренинг",
 
-                slide.classList.remove("active");
+        subtitle:
+            "Пространство для кросс-тренинга, канатов, саней и работы с собственным весом.",
 
-            });
+        tags: [
+            "Cross Training",
+            "Rogue",
+            "TRX",
+            "Канаты",
+            "AirBike"
+        ],
 
-            dots.forEach((dot)=>{
+        images: [
+            "/assets/images/gallery/functional/functional-01.webp",
+            "/assets/images/gallery/functional/functional-02.webp",
+            "/assets/images/gallery/functional/functional-03.webp"
+        ]
+    },
 
-                dot.classList.remove("active");
+    {
+        id: "cardio",
 
-            });
+        number: "03",
 
-            slides[index].classList.add("active");
+        title: "Кардиозона",
 
-            dots[index].classList.add("active");
+        subtitle:
+            "Современные беговые дорожки, эллипсы, велосипеды и панорамные окна с видом на лес.",
 
-            current = index;
+        tags: [
+            "Technogym",
+            "Skillrun",
+            "Bike",
+            "View"
+        ],
 
-        }
+        images: [
+            "/assets/images/gallery/cardio/cardio-01.webp"
+        ]
+    },
 
-        next?.addEventListener("click",()=>{
+    {
+        id: "spa",
 
-            let index = current + 1;
+        number: "04",
 
-            if(index >= slides.length){
+        title: "SPA & Recovery",
 
-                index = 0;
+        subtitle:
+            "Финская сауна, хаммам, ледяная купель и зона полного восстановления.",
 
-            }
+        tags: [
+            "Sauna",
+            "Hamam",
+            "Recovery"
+        ],
 
-            show(index);
+        images: [
+            "/assets/images/gallery/spa/spa-01.webp"
+        ]
+    }
 
-        });
-
-        prev?.addEventListener("click",()=>{
-
-            let index = current - 1;
-
-            if(index < 0){
-
-                index = slides.length - 1;
-
-            }
-
-            show(index);
-
-        });
-
-        dots.forEach((dot,index)=>{
-
-            dot.addEventListener("click",()=>{
-
-                show(index);
-
-            });
-
-        });
-
-        show(0);
-
-    });
-
-}
+];
