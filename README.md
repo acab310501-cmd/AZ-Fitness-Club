@@ -1,5 +1,7 @@
 # AZ-Fitness-Club
 
+https://acab310501-cmd.github.io/AZ-Fitness-Club/
+
 React-проект фитнес-клуба.
 
 ## Запуск проекта
