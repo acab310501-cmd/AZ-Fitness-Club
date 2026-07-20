@@ -35,10 +35,9 @@ import { initExperience } from "./scripts/experience.js";
 import { initAnimations } from "./scripts/animations.js";
 
 // Новая галерея пространств
-import { initCinemaGallery } from "./components/CinemaGallery.js";
-import { renderSpaces } from "./scripts/renderSpaces.js";
-
-// ==========================================================
+// Новая галерея пространств
+import { initCinemaGalleries } from "./components/CinemaGallery.js";
+import { renderSpaces } from "./scripts/renderSpaces.js";// ==========================================================
 // PRELOADER
 // ==========================================================
 
