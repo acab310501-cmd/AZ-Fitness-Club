@@ -1,156 +1,121 @@
-/* ==========================================================
-   AZ FITNESS CLUB
-   MAIN ENTRY
-========================================================== */
+// ==========================================================
+// AZ FITNESS CLUB
+// MAIN ENTRY
+// ==========================================================
+
 
 // ==========================================================
-// СТИЛИ
+// STYLES
 // ==========================================================
+
 import "./styles/variables.css";
 import "./styles/reset.css";
 import "./styles/base.css";
-import "./styles/animations.css";
-
-// Секции
 import "./styles/header.css";
 import "./styles/hero.css";
 import "./styles/about.css";
 import "./styles/stats.css";
 import "./styles/trainers.css";
 import "./styles/experience.css";
-import "./styles/membership.css";
 import "./styles/spaces.css";
+import "./styles/membership.css";
+import "./styles/animations.css";
+import "./styles/themes.css";
 
-// Новая галерея
-import "./styles/cinema-gallery.css";
 
 // ==========================================================
-// МОДУЛИ
+// SCRIPTS
 // ==========================================================
-import { initHeader } from "./scripts/header.js";
-import { initHero } from "./scripts/hero.js";
-import { initStats } from "./scripts/stats.js";
-import { initTrainers } from "./scripts/trainers.js";
-import { initExperience } from "./scripts/experience.js";
-import { initAnimations } from "./scripts/animations.js";
 
-// Новая галерея пространств
-// Новая галерея пространств
-import { initCinemaGalleries } from "./components/CinemaGallery.js";
-import { renderSpaces } from "./scripts/renderSpaces.js";// ==========================================================
+import "./scripts/header.js";
+import "./scripts/hero.js";
+import "./scripts/animations.js";
+import "./scripts/stats.js";
+import "./scripts/trainers.js";
+import "./scripts/experience.js";
+import "./scripts/theme.js";
+import "./scripts/cursor.js";
+
+
+// ==========================================================
+// SPACES
+// ==========================================================
+
+import { renderSpaces } from "./scripts/renderSpaces.js";
+
+import {
+
+    initCinemaGalleries
+
+} from "./components/CinemaGallery.js";
+
+
+// ==========================================================
 // PRELOADER
 // ==========================================================
 
-const preloader = document.getElementById("preloader");
+const preloader =
+
+    document.getElementById(
+
+        "preloader"
+
+    );
+
 
 if (preloader) {
 
-    setTimeout(() => {
+    setTimeout(
 
-        preloader.classList.add("hidden");
+        () => {
 
-    }, 1200);
+            preloader.classList.add(
+
+                "is-hidden"
+
+            );
+
+        },
+
+        1200
+
+    );
 
 }
 
+
 // ==========================================================
-// GOLD PARTICLES
+// INITIALIZE SPACES
 // ==========================================================
 
-const particles = document.querySelector(".particles");
+document.addEventListener(
 
-if (particles) {
+    "DOMContentLoaded",
 
-    for (let i = 0; i < 40; i++) {
+    () => {
 
-        const particle = document.createElement("span");
 
-        particle.className = "particle";
+        // Создаём пространства клуба
 
-        particle.style.left = Math.random() * 100 + "%";
+        renderSpaces();
 
-        particle.style.top = Math.random() * 100 + "%";
 
-        particle.style.animationDelay = Math.random() * 5 + "s";
+        // Запускаем Cinema Gallery
 
-        particle.style.animationDuration = 5 + Math.random() * 8 + "s";
+        initCinemaGalleries();
 
-        particles.appendChild(particle);
 
     }
 
-}
+);
+
 
 // ==========================================================
-// CURSOR GLOW
+// GLOBAL DEBUG
 // ==========================================================
 
-const glow = document.querySelector(".cursor-glow");
+console.log(
 
-if (glow) {
+    "AZ Fitness Club loaded successfully 🚀"
 
-    document.addEventListener("mousemove", (event) => {
-
-        glow.style.left = event.clientX + "px";
-
-        glow.style.top = event.clientY + "px";
-
-    });
-
-    document.querySelectorAll("a, button").forEach((element) => {
-
-        element.addEventListener("mouseenter", () => {
-
-            glow.classList.add("active");
-
-        });
-
-        element.addEventListener("mouseleave", () => {
-
-            glow.classList.remove("active");
-
-        });
-
-    });
-
-}
-
-// ==========================================================
-// INIT APP
-// ==========================================================
-
-function initApp() {
-
-    initHeader();
-
-    initHero();
-
-    initStats();
-
-    initTrainers();
-
-    initExperience();
-
-    initAnimations();
-
-    renderSpaces();
-
-    initCinemaGalleries();
-
-}
-
-// ==========================================================
-// START
-// ==========================================================
-
-if (document.readyState === "loading") {
-
-    document.addEventListener("DOMContentLoaded", initApp);
-
-} else {
-
-    initApp();
-
-}
-
-console.log("🚀 AZ Fitness Club started");
+);
