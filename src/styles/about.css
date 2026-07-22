@@ -3,7 +3,7 @@
     padding: 180px 0;
     background:
         radial-gradient(circle at top right,
-            rgba(110, 72, 170, 0.08),
+            rgba(212, 175, 55, 0.06),
             transparent 35%),
         radial-gradient(circle at bottom left,
             rgba(255, 215, 0, 0.05),
@@ -178,7 +178,7 @@
 
     margin-bottom: 28px;
 
-    box-shadow: var(--shadow-purple);
+    box-shadow: var(--shadow-gold-soft);
 }
 
 /* ==========================

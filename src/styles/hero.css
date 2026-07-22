@@ -47,7 +47,7 @@
         ),
         radial-gradient(
             circle at 75% 20%,
-            rgba(110,74,255,.20),
+            rgba(212,175,55,.14),
             transparent 45%
         ),
         radial-gradient(
@@ -235,11 +235,11 @@
 
     background:linear-gradient(
         135deg,
-        #8A4DFF,
-        #6E4AFF
+        #b98b3c,
+        #f2d29a
     );
 
-    color:#fff;
+    color:#14110a;
 
     text-decoration:none;
 
@@ -254,7 +254,7 @@
     transition:.35s;
 
     box-shadow:
-        0 12px 40px rgba(110,74,255,.35);
+        0 12px 40px rgba(212,175,55,.35);
 
 }
 
@@ -299,7 +299,7 @@
     transform:translateY(-5px);
 
     box-shadow:
-        0 24px 60px rgba(110,74,255,.45);
+        0 24px 60px rgba(212,175,55,.45);
 
 }
 

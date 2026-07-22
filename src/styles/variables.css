@@ -4,19 +4,22 @@
   --color-white: #ffffff;
   --color-gold: #d4af37;
   --color-gold-light: #f5d77a;
-  --color-purple-light: #c988ff;
   --color-gray: #8e8e93;
 
   /* Текст (исправлено) */
   --color-text: var(--color-white);
 
+  /* Акценты */
+  --color-gold-soft: #e6c878;
+  --color-brass: #b98b3c;
+
   /* Градиенты */
-  --gradient-main: linear-gradient(135deg, #6d3bff 0%, #a335ef 100%);
+  --gradient-main: linear-gradient(135deg, #b98b3c 0%, #f2d29a 100%);
   --gradient-gold: linear-gradient(135deg, #b98b3c, #f5d77a);
 
   /* Тени */
-  --shadow-purple: 0 20px 40px rgba(163, 53, 239, 0.3);
-  --shadow-purple-strong: 0 25px 50px rgba(163, 53, 239, 0.4);
+  --shadow-gold-soft: 0 20px 40px rgba(212, 175, 55, 0.25);
+  --shadow-gold-strong: 0 25px 50px rgba(212, 175, 55, 0.35);
   --shadow-gold: 0 8px 32px rgba(212, 175, 55, 0.25);
 
   /* Шрифты */

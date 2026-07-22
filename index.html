@@ -5,6 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AZ Fitness Club — премиальный фитнес-клуб</title>
 
+  <meta name="description" content="AZ Fitness Club — премиальный фитнес-клуб. Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн. Пространство для тех, кто ценит качество и результат." />
+  <meta name="theme-color" content="#0b0b0b" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="AZ Fitness Club — премиальный фитнес-клуб" />
+  <meta property="og:description" content="Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн. Пространство для тех, кто ценит качество и результат." />
+  <meta property="og:image" content="%BASE_URL%images/club.webp" />
+  <meta property="og:locale" content="ru_RU" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="AZ Fitness Club — премиальный фитнес-клуб" />
+  <meta name="twitter:description" content="Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн." />
+  <meta name="twitter:image" content="%BASE_URL%images/club.webp" />
+
   <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -37,7 +56,9 @@
       <h2>AZ</h2>
       <span>FITNESS CLUB</span>
     </div>
+  </header>
 
+  <div class="nav-wrapper" id="navWrapper">
     <nav class="nav">
       <a href="#about">О клубе</a>
       <a href="#trainers">Тренеры</a>
@@ -47,7 +68,13 @@
     </nav>
 
     <a href="#membership" class="join-btn">Вступить</a>
-  </header>
+  </div>
+
+  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 
   <!-- ===================================== -->
   <!-- MAIN -->
@@ -307,7 +334,7 @@
 <!-- ПРОСТРАНСТВО КЛУБА -->
 <!-- ===================================== -->
 
-<section id="club-spaces" class="club-spaces reveal">
+<section id="spaces" class="club-spaces reveal">
 
     <div class="container">
 

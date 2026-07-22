@@ -36,7 +36,7 @@
 
             circle,
 
-            rgba(109,59,255,.15),
+            rgba(212,175,55,.12),
 
             transparent 70%
 
@@ -519,6 +519,85 @@
         );
 
     opacity:.45;
+
+}
+
+/* ==========================================================
+   CTA BUTTON
+========================================================== */
+
+.plan-button{
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    margin-top:38px;
+
+    padding:16px 0;
+
+    width:100%;
+
+    border-radius:999px;
+
+    border:1px solid rgba(255,255,255,.16);
+
+    background:transparent;
+
+    color:#fff;
+
+    text-decoration:none;
+
+    font-size:14px;
+    font-weight:600;
+
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+
+    transition:
+        background .35s ease,
+        border-color .35s ease,
+        color .35s ease,
+        transform .35s ease,
+        box-shadow .35s ease;
+
+}
+
+.plan-button:hover{
+
+    border-color:transparent;
+
+    background:var(--gradient-gold);
+
+    color:#14110a;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+        0 16px 40px rgba(212,175,55,.35);
+
+}
+
+.membership-card.premium .plan-button{
+
+    border-color:transparent;
+
+    background:var(--gradient-gold);
+
+    color:#14110a;
+
+    box-shadow:
+        0 16px 40px rgba(212,175,55,.25);
+
+}
+
+.membership-card.premium .plan-button:hover{
+
+    transform:translateY(-3px) scale(1.02);
+
+    box-shadow:
+        0 20px 50px rgba(212,175,55,.4);
 
 }
 
