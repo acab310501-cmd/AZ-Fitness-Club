@@ -79,6 +79,7 @@ export function initHeader() {
 
     const navToggle = document.getElementById("navToggle");
     const nav = document.getElementById("siteNav");
+    const mobileLinks = nav.querySelectorAll("a");
 
     function openMenu() {
         document.body.classList.add("nav-open");
@@ -90,19 +91,47 @@ export function initHeader() {
         if (navToggle) navToggle.setAttribute("aria-expanded", "false");
     }
 
-    if (navToggle && nav) {
-        navToggle.addEventListener("click", () => {
-            const isOpen = document.body.classList.contains("nav-open");
-            isOpen ? closeMenu() : openMenu();
+if (navToggle && nav) {
+
+    navToggle.addEventListener("click", () => {
+
+        document.body.classList.toggle("nav-open");
+
+        navToggle.setAttribute(
+            "aria-expanded",
+            document.body.classList.contains("nav-open")
+        );
+
+    });
+
+    mobileLinks.forEach(link => {
+
+        link.addEventListener("click", () => {
+
+            closeMenu();
+
         });
 
-        document.addEventListener("keydown", (e) => {
-            if (e.key === "Escape") closeMenu();
-        });
+    });
 
-        window.addEventListener("resize", () => {
-            if (window.innerWidth > 900) closeMenu();
-        });
-    }
+    document.addEventListener("keydown", (e) => {
+
+        if (e.key === "Escape") {
+
+            closeMenu();
+
+        }
+
+    });
+
+    window.addEventListener("resize", () => {
+
+        if (window.innerWidth > 900) {
+
+            closeMenu();
+
+        }
+
+    });
+
 }
-
