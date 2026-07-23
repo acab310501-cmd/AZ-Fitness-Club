@@ -866,6 +866,7 @@
       padding: 1px;
       background: linear-gradient(145deg, rgba(214,174,77,.5), transparent 30%, transparent 70%, rgba(244,237,224,.14));
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
       opacity: 0;
@@ -1211,7 +1212,7 @@
       .spaces-grid { grid-template-columns: 1fr; }
     }
 
-    /* ---------- membership.css (оставлен как был) ---------- */
+    /* ---------- membership.css ---------- */
     .membership {
       position: relative;
       padding: 180px 0;
@@ -1440,7 +1441,7 @@
     /* ---------- contacts, footer, floating, etc. ---------- */
     .contacts {
       padding: 120px 0;
-      background: var(--color-bg);
+      background: var(--color-black);
       border-bottom: 1px solid rgba(255,255,255,0.03);
     }
     .contacts .section-title p { max-width: 600px; margin: 6px auto 0; }
@@ -1451,7 +1452,7 @@
       gap: 12px;
       margin-top: 40px;
       font-size: 1rem;
-      color: var(--color-gray);
+      color: rgba(255,255,255,0.5);
     }
     .contacts-info a {
       color: var(--color-gold);
@@ -1645,7 +1646,7 @@
   </header>
 
   <!-- ===================================== -->
-  <!-- МОБИЛЬНОЕ МЕНЮ (полноэкранное) -->
+  <!-- МОБИЛЬНОЕ МЕНЮ (ЕДИНОЕ) -->
   <!-- ===================================== -->
 
   <nav class="mobile-menu" id="siteNav">
@@ -1898,7 +1899,7 @@
     </section>
 
     <!-- ===================================== -->
-    <!-- CLUB SPACES (восстановлено) -->
+    <!-- CLUB SPACES -->
     <!-- ===================================== -->
 
     <section id="club-spaces" class="club-spaces reveal">
@@ -2073,6 +2074,7 @@
         this.setAttribute('aria-expanded', isOpen);
       });
 
+      // Закрытие по клику на ссылку (только внутри одного меню)
       document.querySelectorAll('.mobile-menu a').forEach(link => {
         link.addEventListener('click', () => {
           body.classList.remove('nav-open');
@@ -2080,6 +2082,7 @@
         });
       });
 
+      // Закрытие по Escape
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && body.classList.contains('nav-open')) {
           body.classList.remove('nav-open');
@@ -2139,7 +2142,7 @@
       }, { threshold: 0.3 });
       statNumbers.forEach(el => counterObserver.observe(el));
 
-      // ---------- РЕНДЕР ГАЛЕРЕИ ПРОСТРАНСТВ (восстановлено) ----------
+      // ---------- РЕНДЕР ГАЛЕРЕИ ПРОСТРАНСТВ ----------
       function renderSpaces() {
         const container = document.getElementById('spaces-gallery');
         if (!container) return;
@@ -2185,13 +2188,13 @@
 
         let html = '<div class="spaces-grid">';
         spaces.forEach((space, index) => {
-          const isLarge = index === 0 || index === 2;
+          const isLarge = (index === 0 || index === 2);
           html += `
             <div class="space-card ${isLarge ? 'space-large' : ''}">
               <img src="${space.img}" alt="${space.title}" loading="lazy" />
               <div class="space-overlay"></div>
               <div class="space-content">
-                <span>${space.icon} ${space.desc.split(' ').slice(0,2).join(' ')}</span>
+                <span>${space.icon}</span>
                 <h3>${space.title}</h3>
               </div>
             </div>
@@ -2206,6 +2209,14 @@
         document.addEventListener('DOMContentLoaded', renderSpaces);
       } else {
         renderSpaces();
+      }
+
+      // ---------- Скрываем прелоадер ----------
+      const preloader = document.getElementById('preloader');
+      if (preloader) {
+        setTimeout(() => {
+          preloader.classList.add('is-hidden');
+        }, 1200);
       }
 
     })();
