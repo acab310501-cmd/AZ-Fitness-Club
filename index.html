@@ -5,29 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AZ Fitness Club — премиальный фитнес-клуб</title>
 
-  <meta name="description" content="AZ Fitness Club — премиальный фитнес-клуб. Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн. Пространство для тех, кто ценит качество и результат." />
+  <meta name="description" content="AZ Fitness Club — приватный фитнес-клуб премиум-класса: силовой зал, бассейн, SPA и восстановление, персональные тренеры. Пространство для тех, кто ценит качество, эстетику и результат." />
+  <meta name="keywords" content="премиальный фитнес-клуб, фитнес клуб, тренажёрный зал, персональный тренер, SPA, бассейн, абонемент в спортзал" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="AZ Fitness Club" />
+  <link rel="canonical" href="https://acab310501-cmd.github.io/AZ-Fitness-Club/" />
   <meta name="theme-color" content="#0b0b0b" />
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="AZ Fitness Club — премиальный фитнес-клуб" />
-  <meta property="og:description" content="Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн. Пространство для тех, кто ценит качество и результат." />
-  <meta property="og:image" content="%BASE_URL%images/club.webp" />
+  <meta property="og:site_name" content="AZ Fitness Club" />
   <meta property="og:locale" content="ru_RU" />
+  <meta property="og:title" content="AZ Fitness Club — премиальный фитнес-клуб" />
+  <meta property="og:description" content="Приватный фитнес-клуб премиум-класса: силовой зал, бассейн, SPA и восстановление, персональные тренеры мирового уровня." />
+  <meta property="og:url" content="https://acab310501-cmd.github.io/AZ-Fitness-Club/" />
+  <meta property="og:image" content="https://acab310501-cmd.github.io/AZ-Fitness-Club/images/og-cover.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="AZ Fitness Club — премиальный фитнес-клуб" />
-  <meta name="twitter:description" content="Дизайнерский интерьер, персональные тренеры, SPA и recovery-зона, бассейн." />
-  <meta name="twitter:image" content="%BASE_URL%images/club.webp" />
+  <meta name="twitter:description" content="Приватный фитнес-клуб премиум-класса: силовой зал, бассейн, SPA и восстановление, персональные тренеры мирового уровня." />
+  <meta name="twitter:image" content="https://acab310501-cmd.github.io/AZ-Fitness-Club/images/og-cover.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="%BASE_URL%favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="%BASE_URL%favicon-32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="%BASE_URL%favicon-16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="%BASE_URL%apple-touch-icon.png" />
+  <link rel="manifest" href="%BASE_URL%site.webmanifest" />
 
   <!-- Шрифты -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Структурированные данные -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ExerciseGym",
+    "name": "AZ Fitness Club",
+    "description": "Приватный фитнес-клуб премиум-класса: силовой зал, бассейн, SPA и восстановление, персональные тренеры.",
+    "image": "https://acab310501-cmd.github.io/AZ-Fitness-Club/images/og-cover.jpg",
+    "url": "https://acab310501-cmd.github.io/AZ-Fitness-Club/",
+    "telephone": "+7-999-123-45-67",
+    "priceRange": "₽₽₽",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "ул. Центральная, 1",
+      "addressCountry": "RU"
+    }
+  }
+  </script>
 
   <!-- Vite -->
   <script type="module" src="/src/main.js"></script>
@@ -41,11 +72,12 @@
 
   <div id="preloader">
     <div class="preloader-logo">AZ</div>
-    <div class="preloader-spinner"></div>
+    <div class="preloader-bar"><span></span></div>
   </div>
 
   <!-- Cursor -->
   <div class="cursor-glow"></div>
+  <div class="cursor-dot"></div>
 
   <!-- ===================================== -->
   <!-- HEADER -->
@@ -56,25 +88,24 @@
       <h2>AZ</h2>
       <span>FITNESS CLUB</span>
     </div>
-  </header>
 
-  <div class="nav-wrapper" id="navWrapper">
-    <nav class="nav">
+    <nav class="nav" id="siteNav">
       <a href="#about">О клубе</a>
       <a href="#trainers">Тренеры</a>
-      <a href="#spaces">Пространства</a>
+      <a href="#club-spaces">Пространства</a>
       <a href="#membership">Абонементы</a>
       <a href="#contacts">Контакты</a>
     </nav>
 
-    <a href="#membership" class="join-btn">Вступить</a>
-  </div>
-
-  <button class="menu-toggle" id="menuToggle" type="button" aria-label="Открыть меню" aria-expanded="false">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
+    <div class="header-actions">
+      <a href="#membership" class="join-btn">Вступить</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Открыть меню" aria-expanded="false" aria-controls="siteNav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
 
   <!-- ===================================== -->
   <!-- MAIN -->
@@ -112,9 +143,9 @@
         </h1>
 
         <p>
-          Премиальное пространство, где современные технологии,
-          архитектура и профессиональное сопровождение помогают
-          достигать результатов быстрее.
+          Место, где архитектура, свет и внимание к деталям
+          ощущаются ещё до первой тренировки. Здесь результат —
+          не обещание, а стандарт.
         </p>
 
         <a href="#membership" class="hero-button">Выбрать абонемент</a>
@@ -135,11 +166,11 @@
           <span>WHY AZ FITNESS CLUB</span>
           <h2>
             Мы создаём пространство,<br>
-            где каждая деталь работает<br>
-            на ваш результат.
+            где каждая деталь служит<br>
+            одной цели — вашему результату.
           </h2>
           <p>
-            Не просто фитнес-клуб. Пространство силы, эстетики,
+            Не просто фитнес-клуб — пространство силы, эстетики,
             дисциплины и личной трансформации.
           </p>
         </div>
@@ -148,25 +179,25 @@
           <article class="about-card reveal">
             <div class="card-icon">✦</div>
             <h3>Luxury</h3>
-            <p>Дизайнерский интерьер, премиальное оборудование и атмосфера лучших клубов мира.</p>
+            <p>Дизайнерский интерьер, оборудование Technogym и атмосфера, которую невозможно перепутать ни с чем.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">◈</div>
             <h3>Privacy</h3>
-            <p>Минимум людей, максимум комфорта. Никаких очередей.</p>
+            <p>Ограниченное число участников. Никакой суеты и очередей — только пространство и тишина.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">✧</div>
             <h3>Recovery</h3>
-            <p>Сауна, массаж, полноценная зона восстановления.</p>
+            <p>Сауна, массаж и полноценная SPA-зона — тело восстанавливается так же тщательно, как тренируется.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">⬢</div>
             <h3>Community</h3>
-            <p>Сообщество людей, которые ежедневно становятся лучшей версией себя.</p>
+            <p>Люди, которые каждый день выбирают лучшую версию себя — и незаметно поднимают планку для вас.</p>
           </article>
         </div>
       </div>
@@ -334,7 +365,7 @@
 <!-- ПРОСТРАНСТВО КЛУБА -->
 <!-- ===================================== -->
 
-<section id="spaces" class="club-spaces reveal">
+<section id="club-spaces" class="club-spaces reveal">
 
     <div class="container">
 
@@ -349,10 +380,9 @@
             </h2>
 
             <p>
-                От современного тренажёрного зала до SPA-комплекса —
-                каждое пространство клуба создавалось так,
-                чтобы вдохновлять, мотивировать и дарить ощущение
-                настоящего премиального фитнес-клуба.
+                От тренировочного зала до SPA-комплекса — каждое
+                пространство клуба продумано так, чтобы вдохновлять
+                с первого шага и держать этот уровень в каждой детали.
             </p>
 
         </div>
@@ -379,8 +409,9 @@
             путь к трансформации
           </h2>
           <p>
-            Три уровня поддержки — от старта до полного сопровождения.
-            Каждый абонемент даёт доступ ко всем зонам клуба.
+            Три уровня участия — от первого шага до полного
+            сопровождения. Каждый абонемент открывает доступ
+            ко всем пространствам клуба.
           </p>
         </div>
 
@@ -396,7 +427,8 @@
               <span class="month">/ месяц</span>
             </div>
             <p class="plan-description">
-              Отличный выбор для первого шага к новой версии себя.
+              Уверенное начало для тех, кто готов к переменам —
+              без компромиссов в качестве.
             </p>
             <ul class="plan-list">
               <li>24/7 доступ</li>
@@ -418,7 +450,8 @@
               <span class="month">/ месяц</span>
             </div>
             <p class="plan-description">
-              Максимум возможностей для тех, кто хочет получать лучший результат.
+              Полное погружение для тех, кому нужен результат,
+              а не просто абонемент.
             </p>
             <ul class="plan-list">
               <li>Безлимитный доступ в клуб</li>
@@ -441,7 +474,8 @@
               <span class="month">/ месяц</span>
             </div>
             <p class="plan-description">
-              Полное сопровождение, персональный сервис и доступ ко всем привилегиям клуба.
+              Клуб внутри клуба: персональный сервис и привилегии
+              для тех, кто не привык ждать.
             </p>
             <ul class="plan-list">
               <li>Все возможности Premium</li>

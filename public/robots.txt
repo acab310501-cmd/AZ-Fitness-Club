@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://acab310501-cmd.github.io/AZ-Fitness-Club/sitemap.xml

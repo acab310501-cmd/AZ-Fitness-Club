@@ -49,18 +49,34 @@ main {
   animation: pulseLogo 1.5s ease-in-out infinite;
 }
 
-.preloader-spinner {
-  margin-top: 30px;
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgba(255, 255, 255, 0.1);
-  border-top: 3px solid var(--color-gold);
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
+.preloader-bar {
+  margin-top: 34px;
+  width: 180px;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+  position: relative;
 }
 
-@keyframes spin {
-  to { transform: rotate(360deg); }
+.preloader-bar span {
+  position: absolute;
+  inset: 0;
+  width: 40%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--color-gold),
+    var(--color-gold-light),
+    var(--color-gold),
+    transparent
+  );
+  animation: preloaderSweep 1.5s cubic-bezier(.45,0,.55,1) infinite;
+}
+
+@keyframes preloaderSweep {
+  0%   { transform: translateX(-120%); }
+  100% { transform: translateX(360%); }
 }
 
 @keyframes pulseLogo {
@@ -73,20 +89,60 @@ main {
    ============================================================ */
 .cursor-glow {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 300px;
   height: 300px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(212, 175, 55, 0.08), transparent 70%);
   pointer-events: none;
   transform: translate(-50%, -50%);
+  opacity: 0;
   z-index: 999;
-  transition: width 0.3s, height 0.3s, background 0.3s;
+  transition: width 0.3s, height 0.3s, background 0.3s, opacity 0.4s ease;
 }
 
 .cursor-glow.active {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.15), transparent 70%);
+  width: 420px;
+  height: 420px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.16), transparent 70%);
+}
+
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-gold);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  z-index: 1000;
+  transition: width .3s ease, height .3s ease, opacity .3s ease, background .3s ease;
+}
+
+.cursor-dot.active {
+  width: 46px;
+  height: 46px;
+  background: transparent;
+  border: 1.5px solid var(--color-gold);
+}
+
+.cursor-dot.is-pressed {
+  width: 6px;
+  height: 6px;
+}
+
+/* На устройствах с точным указателем прячем системный курсор
+   на интерактивных элементах — им управляет наш кастомный курсор */
+@media (hover: hover) and (pointer: fine) {
+  body.has-custom-cursor,
+  body.has-custom-cursor a,
+  body.has-custom-cursor button {
+    cursor: none;
+  }
 }
 /* ==========================================================
    GLOBAL TYPOGRAPHY

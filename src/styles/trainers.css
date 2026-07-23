@@ -38,7 +38,7 @@
     background:
         radial-gradient(
             circle,
-            rgba(109,59,255,.18),
+            rgba(196,154,82,.16),
             transparent 70%
         );
 
@@ -373,7 +373,7 @@
 
             transparent 70%,
 
-            rgba(109,59,255,.35)
+            rgba(244,237,224,.14)
 
         );
 
@@ -804,6 +804,6 @@
     right:-320px;
     bottom:-220px;
 
-    background:rgba(212,175,55,.10);
+    background:rgba(154,120,66,.16);
 
 }

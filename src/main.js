@@ -34,7 +34,8 @@ import { initAnimations } from "./scripts/animations.js";
 import { initStats } from "./scripts/stats.js";
 import { initTrainers } from "./scripts/trainers.js";
 import { initExperience } from "./scripts/experience.js";
-import { initCursor } from "./scripts/cursor.js";
+import "./scripts/theme.js";
+import "./scripts/cursor.js";
 
 
 // ==========================================================
@@ -113,7 +114,6 @@ document.addEventListener(
         initTrainers();
         initExperience();
         initAnimations();
-        initCursor();
 
 
     }

@@ -1,20 +1,32 @@
-# AZ-Fitness-Club
+# AZ Fitness Club
 
 https://acab310501-cmd.github.io/AZ-Fitness-Club/
 
-React-проект фитнес-клуба.
+Премиальный лендинг фитнес-клуба. Vite + Vanilla JS + GSAP.
 
 ## Запуск проекта
 
 1. Установите зависимости:
    ```bash
    npm install
-## Запустите локально:
+   ```
 
-npm start
+2. Запустите локальный сервер разработки:
+   ```bash
+   npm run dev
+   ```
 
-Затем выполните в терминале:
-```bash
-git add README.md
-git commit -m "Add README with instructions"
-git push
+3. Сборка production-версии (появится в папке `dist/`):
+   ```bash
+   npm run build
+   ```
+
+4. Предпросмотр production-сборки:
+   ```bash
+   npm run preview
+   ```
+
+## Деплой
+
+При пуше в ветку `main` GitHub Actions (`.github/workflows/deploy.yml`)
+автоматически собирает проект и публикует его на GitHub Pages.
