@@ -106,34 +106,3 @@ export function initHeader() {
         });
     }
 }
-let lastScroll = 0;
-let scrollDownCounter = 0; // счётчик пикселей скролла вниз
-
-const updateHeader = () => {
-    const currentScroll = window.pageYOffset;
-
-    // Стеклянный эффект
-    header.classList.toggle("header-scrolled", currentScroll > 80);
-
-    // Всегда показывать в самом верху
-    if (currentScroll <= 120) {
-        header.classList.remove("header-hidden");
-        lastScroll = currentScroll;
-        scrollDownCounter = 0;
-        return;
-    }
-
-    if (currentScroll > lastScroll) {
-        // Скролл вниз: накапливаем счётчик
-        scrollDownCounter += currentScroll - lastScroll;
-        if (scrollDownCounter > 100) { // скрываем только после 100px
-            header.classList.add("header-hidden");
-        }
-    } else {
-        // Скролл вверх: показываем сразу
-        header.classList.remove("header-hidden");
-        scrollDownCounter = 0;
-    }
-
-    lastScroll = currentScroll;
-};
