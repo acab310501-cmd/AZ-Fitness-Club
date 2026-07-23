@@ -50,7 +50,7 @@
     "description": "Приватный фитнес-клуб премиум-класса: силовой зал, бассейн, SPA и восстановление, персональные тренеры.",
     "image": "https://acab310501-cmd.github.io/AZ-Fitness-Club/images/og-cover.jpg",
     "url": "https://acab310501-cmd.github.io/AZ-Fitness-Club/",
-    "telephone": "+7-999-123-45-67",
+    "telephone": "+7-953-097-90-39",
     "priceRange": "₽₽₽",
     "address": {
       "@type": "PostalAddress",
@@ -493,7 +493,7 @@
     }
 
     /* ============================================================
-       STATISTICS (обновлённая версия)
+       STATISTICS
        ============================================================ */
     .stats {
       padding: 140px 0;
@@ -742,7 +742,7 @@
     }
 
     /* ============================================================
-       MEMBERSHIP (обновлённая версия с улучшениями)
+       MEMBERSHIP
        ============================================================ */
     .membership {
       padding: 120px 0;
@@ -949,11 +949,112 @@
     }
 
     /* ============================================================
-       CONTACTS
+       CONTACTS (обновлённые контакты)
        ============================================================ */
     .contacts {
       padding: 120px 0;
       background: var(--color-bg);
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+    }
+
+    .contacts .section-title p {
+      max-width: 600px;
+      margin: 6px auto 0;
+    }
+
+    .contacts-info {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin-top: 40px;
+      font-size: 1rem;
+      color: var(--color-gray);
+    }
+
+    .contacts-info a {
+      color: var(--color-gold);
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    .contacts-info a:hover {
+      color: #f0d47a;
+    }
+
+    /* ============================================================
+       FOOTER (как у Ани Зеленской)
+       ============================================================ */
+    footer {
+      padding: 40px 0;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      text-align: center;
+      color: rgba(255,255,255,0.3);
+      font-size: 14px;
+    }
+
+    .footer-socials {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-socials a {
+      color: rgba(255,255,255,0.6);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--color-gold);
+    }
+
+    /* ============================================================
+       ПЛАВАЮЩИЕ КНОПКИ (Telegram, WhatsApp)
+       ============================================================ */
+    .floating-buttons {
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      z-index: 999;
+    }
+
+    .floating-buttons a {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .floating-buttons a:hover {
+      transform: scale(1.1);
+      box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+    }
+
+    .floating-buttons a.telegram {
+      background: #0088cc;
+    }
+
+    .floating-buttons a.whatsapp {
+      background: #25D366;
+    }
+
+    .floating-buttons a svg {
+      width: 28px;
+      height: 28px;
+      fill: #fff;
+      display: block;
     }
 
     /* ============================================================
@@ -1015,6 +1116,9 @@
       .experience-image img { height: 300px; }
       .experience-card { left: 20px; right: 20px; bottom: 20px; padding: 20px; }
       .experience-card ul { gap: 10px; }
+      .floating-buttons { bottom: 16px; right: 16px; }
+      .floating-buttons a { width: 48px; height: 48px; }
+      .floating-buttons a svg { width: 24px; height: 24px; }
     }
 
     @media (max-width: 480px) {
@@ -1077,52 +1181,6 @@
   <!-- МОБИЛЬНОЕ МЕНЮ (полноэкранное) -->
   <!-- ===================================== -->
 
-<nav class="mobile-menu" id="siteNav">
-
-    <div class="mobile-menu__content">
-
-        <span class="mobile-menu__eyebrow">
-            AZ FITNESS CLUB
-        </span>
-
-        <a href="#about">О клубе</a>
-
-        <a href="#trainers">Тренеры</a>
-
-        <a href="#club-spaces">Пространства</a>
-
-        <a href="#membership">Абонементы</a>
-
-        <a href="#contacts">Контакты</a>
-
-        <div class="mobile-menu__footer">
-
-            <a href="tel:+79991234567">
-                +7 (999) 123-45-67
-            </a>
-
-            <div class="mobile-socials">
-
-                <a href="#">Instagram</a>
-
-                <a href="#">Telegram</a>
-
-                <a href="#">WhatsApp</a>
-
-            </div>
-
-            <a href="#membership" class="mobile-menu__button">
-
-                Вступить в клуб
-
-            </a>
-
-        </div>
-
-    </div>
-
-</nav>
-
   <nav class="mobile-menu" id="siteNav">
     <div class="mobile-menu__inner">
       <a href="#about">О клубе</a>
@@ -1149,7 +1207,7 @@
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content">
-        <div class="hero-sub">PRIVATE FITNESS CLUB</div>
+        <div class="hero-sub">ПРИВАТНЫЙ ФИТНЕС-КЛУБ</div>
         <h1>
           <span class="line">Тренируйся</span>
           <span class="line">красиво.</span>
@@ -1175,7 +1233,7 @@
     <section class="about reveal" id="about">
       <div class="container">
         <div class="section-title">
-          <span>WHY AZ FITNESS CLUB</span>
+          <span>ПОЧЕМУ AZ FITNESS CLUB</span>
           <h2>
             Мы создаём пространство,<br>
             где каждая деталь служит<br>
@@ -1190,25 +1248,25 @@
         <div class="about-grid">
           <article class="about-card reveal">
             <div class="card-icon">✦</div>
-            <h3>Luxury</h3>
+            <h3>Люкс</h3>
             <p>Дизайнерский интерьер, оборудование Technogym и атмосфера, которую невозможно перепутать ни с чем.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">◈</div>
-            <h3>Privacy</h3>
+            <h3>Приватность</h3>
             <p>Ограниченное число участников. Никакой суеты и очередей — только пространство и тишина.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">✧</div>
-            <h3>Recovery</h3>
+            <h3>Восстановление</h3>
             <p>Сауна, массаж и полноценная SPA-зона — тело восстанавливается так же тщательно, как тренируется.</p>
           </article>
 
           <article class="about-card reveal">
             <div class="card-icon">⬢</div>
-            <h3>Community</h3>
+            <h3>Сообщество</h3>
             <p>Люди, которые каждый день выбирают лучшую версию себя — и незаметно поднимают планку для вас.</p>
           </article>
         </div>
@@ -1234,7 +1292,7 @@
 
           <article class="stat-card">
             <span class="stat-number" data-target="42" data-suffix="+">0</span>
-            <p>Elite<br>Coaches</p>
+            <p>Элитных<br>тренеров</p>
           </article>
 
           <article class="stat-card">
@@ -1252,7 +1310,7 @@
     <section class="trainers reveal" id="trainers">
       <div class="container">
         <div class="section-title">
-          <span>ELITE COACHES</span>
+          <span>ТРЕНЕРЫ AZ FITNESS</span>
           <h2>
             Люди, которые помогут<br>
             изменить вашу жизнь.
@@ -1267,7 +1325,7 @@
             <img src="/images/trainers/trainer-1.webp" alt="Иван Петров" />
             <div class="trainer-info">
               <h3>Иван Петров</h3>
-              <span>Strength Coach</span>
+              <span>Тренер по силовой подготовке</span>
               <p class="trainer-exp">Опыт: <strong>10+ лет</strong></p>
               <ul class="trainer-list">
                 <li>Силовой тренинг</li>
@@ -1282,7 +1340,7 @@
             <img src="/images/trainers/trainer-2.webp" alt="Анна Волкова" />
             <div class="trainer-info">
               <h3>Анна Волкова</h3>
-              <span>Pilates Expert</span>
+              <span>Эксперт по пилатесу</span>
               <p class="trainer-exp">Опыт: <strong>8 лет</strong></p>
               <ul class="trainer-list">
                 <li>Pilates</li>
@@ -1297,7 +1355,7 @@
             <img src="/images/trainers/trainer-3.webp" alt="Алексей Смирнов" />
             <div class="trainer-info">
               <h3>Алексей Смирнов</h3>
-              <span>Performance Coach</span>
+              <span>Тренер по функциональному тренингу</span>
               <p class="trainer-exp">Опыт: <strong>12 лет</strong></p>
               <ul class="trainer-list">
                 <li>Функциональный тренинг</li>
@@ -1312,7 +1370,7 @@
             <img src="/images/trainers/trainer-4.webp" alt="Мария Романова" />
             <div class="trainer-info">
               <h3>Мария Романова</h3>
-              <span>Recovery Specialist</span>
+              <span>Специалист по восстановлению</span>
               <p class="trainer-exp">Опыт: <strong>9 лет</strong></p>
               <ul class="trainer-list">
                 <li>Восстановление</li>
@@ -1334,8 +1392,8 @@
       <div class="container">
         <div class="experience-top">
           <div class="experience-heading">
-            <span>EXPERIENCE AZ</span>
-            <h2>Train Hard.<br>Recover Smart.</h2>
+            <span>АТМОСФЕРА AZ</span>
+            <h2>Тренируйся.<br>Восстанавливайся.</h2>
           </div>
           <div class="experience-text">
             <p>
@@ -1348,7 +1406,7 @@
         <div class="experience-image">
           <img src="/images/club.webp" alt="Интерьер AZ Fitness Club" class="parallax" />
           <div class="experience-card">
-            <span>PREMIUM EQUIPMENT</span>
+            <span>ПРЕМИАЛЬНОЕ ОБОРУДОВАНИЕ</span>
             <h3>Technogym Selection</h3>
             <ul>
               <li>✔ Technogym</li>
@@ -1391,7 +1449,7 @@
     <section class="membership reveal" id="membership">
       <div class="container">
         <div class="section-title">
-          <span>MEMBERSHIP</span>
+          <span>АБОНЕМЕНТЫ</span>
           <h2>
             Выберите свой<br>
             путь к трансформации
@@ -1428,7 +1486,7 @@
 
           <!-- Карточка 2: Премиум (золотая) -->
           <article class="membership-card premium">
-            <div class="plan-label">BEST VALUE</div>
+            <div class="plan-label">ЛУЧШИЙ ВЫБОР</div>
             <h3>Премиум</h3>
             <div class="plan-sub">Лучший выбор для большинства клиентов</div>
             <div class="plan-price">
@@ -1482,19 +1540,59 @@
     <section class="contacts reveal" id="contacts">
       <div class="container">
         <div class="section-title">
-          <span>CONTACT</span>
+          <span>КОНТАКТЫ</span>
           <h2>Свяжитесь с нами</h2>
           <p>Мы всегда рады ответить на ваши вопросы</p>
         </div>
-        <div style="text-align:center; padding: 40px 0; color: var(--color-gray);">
+        <div class="contacts-info">
           <p>📍 Адрес: ул. Центральная, 1</p>
-          <p>📞 Телефон: +7 (999) 123-45-67</p>
-          <p>📱 Telegram | WhatsApp | Instagram</p>
+          <p>📞 Телефон: <a href="tel:+79530979039">+7 953 097 90 39</a></p>
+          <p>
+            📱 
+            <a href="https://www.instagram.com/a777kkk?igsh=MWoxNTJlZjAxbTY4aQ==" target="_blank" rel="noopener noreferrer">Instagram</a> | 
+            <a href="https://t.me/kkkkkssss111" target="_blank" rel="noopener noreferrer">Telegram</a> | 
+            <a href="https://wa.me/79530979039" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+          </p>
+          <p><a href="https://2gis.ru/krasnodar/firm/3237490513252326" target="_blank" rel="noopener noreferrer">📍 Смотреть на карте 2ГИС</a></p>
         </div>
       </div>
     </section>
 
   </main>
+
+  <!-- ===================================== -->
+  <!-- FOOTER -->
+  <!-- ===================================== -->
+
+  <footer>
+    <div class="container">
+      <div class="footer-socials">
+        <a href="https://www.instagram.com/a777kkk?igsh=MWoxNTJlZjAxbTY4aQ==" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://t.me/kkkkkssss111" target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href="https://wa.me/79530979039" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="tel:+79530979039">+7 953 097 90 39</a>
+        <a href="https://2gis.ru/krasnodar/firm/3237490513252326" target="_blank" rel="noopener noreferrer">📍 Адрес клуба</a>
+      </div>
+      <p>© 2026 AZ Fitness Club — премиальный фитнес-клуб</p>
+    </div>
+  </footer>
+
+  <!-- ===================================== -->
+  <!-- ПЛАВАЮЩИЕ КНОПКИ -->
+  <!-- ===================================== -->
+
+  <div class="floating-buttons">
+    <a href="https://t.me/kkkkkssss111" target="_blank" rel="noopener noreferrer" class="telegram" aria-label="Telegram">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+        <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 2.498-1.09 4.265-1.807 5.3-2.15 2.523-.835 3.048-.98 3.392-.98z"/>
+      </svg>
+    </a>
+    <a href="https://wa.me/79530979039?text=Здравствуйте%2C%20хочу%20записаться%20в%20AZ%20Fitness%20Club" target="_blank" rel="noopener noreferrer" class="whatsapp" aria-label="WhatsApp">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="white">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+    </a>
+  </div>
 
   <!-- ===================================== -->
   <!-- SCRIPTS -->
@@ -1592,4 +1690,5 @@
   </script>
 
 </body>
-</html>
+</html>+
+-

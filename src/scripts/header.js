@@ -91,47 +91,49 @@ export function initHeader() {
         if (navToggle) navToggle.setAttribute("aria-expanded", "false");
     }
 
-if (navToggle && nav) {
-
-    navToggle.addEventListener("click", () => {
-
-        document.body.classList.toggle("nav-open");
-
-        navToggle.setAttribute(
-            "aria-expanded",
-            document.body.classList.contains("nav-open")
-        );
-
-    });
-
-    mobileLinks.forEach(link => {
-
-        link.addEventListener("click", () => {
-
-            closeMenu();
-
+    if (navToggle && nav) {
+        navToggle.addEventListener("click", () => {
+            const isOpen = document.body.classList.contains("nav-open");
+            isOpen ? closeMenu() : openMenu();
         });
 
-    });
+        document.addEventListener("keydown", (e) => {
+            if (e.key === "Escape") closeMenu();
+        });
 
-    document.addEventListener("keydown", (e) => {
-
-        if (e.key === "Escape") {
-
-            closeMenu();
-
-        }
-
-    });
-
-    window.addEventListener("resize", () => {
-
-        if (window.innerWidth > 900) {
-
-            closeMenu();
-
-        }
-
-    });
-
+        window.addEventListener("resize", () => {
+            if (window.innerWidth > 900) closeMenu();
+        });
+    }
 }
+let lastScroll = 0;
+let scrollDownCounter = 0; // счётчик пикселей скролла вниз
+
+const updateHeader = () => {
+    const currentScroll = window.pageYOffset;
+
+    // Стеклянный эффект
+    header.classList.toggle("header-scrolled", currentScroll > 80);
+
+    // Всегда показывать в самом верху
+    if (currentScroll <= 120) {
+        header.classList.remove("header-hidden");
+        lastScroll = currentScroll;
+        scrollDownCounter = 0;
+        return;
+    }
+
+    if (currentScroll > lastScroll) {
+        // Скролл вниз: накапливаем счётчик
+        scrollDownCounter += currentScroll - lastScroll;
+        if (scrollDownCounter > 100) { // скрываем только после 100px
+            header.classList.add("header-hidden");
+        }
+    } else {
+        // Скролл вверх: показываем сразу
+        header.classList.remove("header-hidden");
+        scrollDownCounter = 0;
+    }
+
+    lastScroll = currentScroll;
+};
